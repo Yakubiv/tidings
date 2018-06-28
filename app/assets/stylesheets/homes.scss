@@ -16,9 +16,51 @@ body.home {
 .c-pageheader {
   min-height: 174px;
   position: relative;
+}
 
-  &--home {
-    min-height: 480px;
-    padding-top: 222px;
+.c-pageheader--home {
+  min-height: 480px;
+  padding-top: 222px;
+}
+
+.header {
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 100%;
+  display: block;
+
+  .box {
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    position: relative;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    z-index: 501;
+  }
+
+  &__social {
+    list-style: none;
+    font-size: 23px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    li {
+      display: inline-block;
+      margin-right: 5px;
+      padding-left: 0;
+    }
   }
 }
