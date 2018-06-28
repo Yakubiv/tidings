@@ -1,3 +1,24 @@
-body {
-  padding-top: 80px;
+body.admin {
+    margin-top: 80px;
+}
+
+body.home {
+  background: #19191b;
+  font-family: "metropolis-regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.875;
+  color: #656565;
+  margin: 0;
+  padding: 0;
+}
+
+.c-pageheader {
+  min-height: 174px;
+  position: relative;
+
+  &--home {
+    min-height: 480px;
+    padding-top: 222px;
+  }
 }
