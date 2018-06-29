@@ -1,0 +1,15 @@
+%h2.c-login__title Login to Tidings
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .form-group
+    = f.label :email
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+  .form-group
+    = f.label :password
+    = f.password_field :password, autocomplete: "off", class: 'form-control input-lg'
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .actions
+    = f.submit "Log in", class: 'btn c-login__button btn-block'
+= render "devise/shared/links"

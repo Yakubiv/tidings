@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Tidings
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.devise
+    .container-login
+      .c-login--wrap
+        .c-login__form
+          = yield
+        .c-login__img{ style: "background-image: url(https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395debe4f66b27cd8fb346d73cffb70c&auto=format&fit=crop&w=966&q=80)" }
