@@ -32,4 +32,58 @@
                 %a{ href: '' } About
               %li
                 %a{ href: '' } Contact
-    = yield
+      .c-pageheader-content.box
+        .u-full-widht
+          .featured
+            .featured__column.featured__column--big
+              .entry{ style: "background-image: url(https://images.unsplash.com/photo-1530100493986-978cbf8b782a)" }
+                .entry__content
+                  %span.entry__category
+                    %a{ href: '' } Music
+                  %h1
+                    %a{ href: '' }
+                      My first art
+                  .entry__info
+                    %ul.entry__meta
+                      %li Name
+                      %li Date
+            .featured__column.featured__column--small
+              .entry{ style: "background-image: url(https://images.unsplash.com/photo-1530175076303-4a27be88b8b9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c3e74bc209d2cdd10bc13a8f8fb1423&auto=format&fit=crop&w=500&q=60)" }
+                .entry__content
+                  %span.entry__category
+                    %a{ href: '' } Buity
+                  %h1
+                    %a{ href: '' }
+                      My first art
+                  .entry__info
+                    %ul.entry__meta
+                      %li Name
+                      %li Date
+              .entry{ style: "background-image: url(https://images.unsplash.com/photo-1530143584546-02191bc84eb5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b167c46401165e317bcd731dc10b26a6&auto=format&fit=crop&w=1950&q=80)" }
+                .entry__content
+                  %span.entry__category
+                    %a{ href: '' } Krasa
+                  %h1
+                    %a{ href: '' }
+                      My first art
+                  .entry__info
+                    %ul.entry__meta
+                      %li Name
+                      %li Date
+    .c-content
+      .c-content--wrap
+        .c-cards
+          %a.c-card{ href: '' }
+            .c-card__thumb{ style: "background-image: url(https://images.unsplash.com/photo-1530175076303-4a27be88b8b9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c3e74bc209d2cdd10bc13a8f8fb1423&auto=format&fit=crop&w=500&q=60)" }
+              .c-card__date
+                .c-card__date--day 2
+                .c-card__date--month Mar
+            .c-card__content
+              %h1.c-card__title
+                My card
+              %p.c-card__description
+                khfjjasfhjasfjkhaskjhfasasfasf
+              %span.c-card__actions
+
+          Posts here
+      = yield
