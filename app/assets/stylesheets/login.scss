@@ -55,9 +55,11 @@ body.devise {
 
   &__button {
     background: transparent !important;
-    border: 0.2rem solid #000000;
+    border: 1px solid #333;
     border-radius: 0px;
-    color: #000000;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 15px;
   }
 }
 
@@ -65,6 +67,6 @@ body.devise {
   border-radius: 0px !important;
 
   &:focus {
-    border-color: #000000 !important;
+    border-color: #333 !important;
   }
 }
