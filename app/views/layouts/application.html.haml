@@ -11,8 +11,25 @@
       %header.header
         .header__content.box
           .header__logo
-            Marta
+            %a{ href: '' }
+              = image_tag 'logo-white.png'
           %ul.header__social
             %li
               %i.fa.fa-facebook
+            %li
+              %i.fa.fa-instagram
+            %li
+              %i.fa.fa-twitter
+          .header__search
+            Search
+          %nav.header__nav-wrap
+            %ul.header__nav
+              %li.current
+                %a{ href: '' } Home
+              %li
+                %a{ href: '' } Categories
+              %li
+                %a{ href: '' } About
+              %li
+                %a{ href: '' } Contact
     = yield
