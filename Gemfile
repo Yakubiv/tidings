@@ -14,10 +14,17 @@ gem 'jbuilder', '~> 2.5'
 gem "font-awesome-rails"
 gem 'google-webfonts'
 gem 'haml-rails'
+
+# Editor
+gem 'jquery-rails'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # auth
-
 gem 'devise'
 
 group :development, :test do

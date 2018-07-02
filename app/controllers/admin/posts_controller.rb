@@ -15,7 +15,7 @@ class Admin::PostsController < Admin::BaseController
   def create
     @post = Post.create(post_params)
 
-    redirect_to [:edit, :admin, @post], notice: 'Post was successfully created.'
+    redirect_to [:admin, :posts], notice: 'Post was successfully created.'
   end
 
   def update
@@ -35,6 +35,12 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :content)
+    params.require(:post).permit(:title,
+                                 :description,
+                                 :content,
+                                 :url_alies,
+                                 :tags,
+                                 :thumbnail,
+                                 :thumbnail_cache)
   end
 end
