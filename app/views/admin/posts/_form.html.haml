@@ -15,16 +15,35 @@
   .form-group
     = f.file_field :thumbnail
     = f.hidden_field :thumbnail_cache
-    - if f.object.thumbnail
-      = image_tag f.object.thumbnail.url(:medium_thumb)
+    - if f.object.thumbnail.url
+      = image_tag f.object.thumbnail_url(:thumb)
 
   .form-group
     = f.cktext_area :content
-  .form-group
-    = f.label :url_alies
-    = f.text_field :url_alies, class: 'form-control'
-  .form-group
-    = f.label :tags
-    = f.text_field :tags, class: 'form-control'
+
+  .row
+    .col-sm-6
+      .form-group
+        = f.label :url_alies
+        = f.text_field :url_alies, class: 'form-control'
+      .form-group
+        = f.label :tags
+        = f.text_field :tags, class: 'form-control'
+      .form-group
+        = f.label :meta_tags
+        = f.text_field :meta_tags, class: 'form-control'
+    .col-sm-6
+      .form-group
+        = f.label :category
+        = f.select :category, options_for_select(Post.categories.select), {}, class: 'form-control'
+      .form-group
+        = f.label :status
+        = f.select :status, options_for_select(Post.statuses.select), {}, class: 'form-control'
+      .form-group
+        = f.label :big_featured
+        = f.check_box :big_featured
+      .form-group
+        = f.label :featured
+        = f.check_box :featured
   .form-group
     = f.submit 'Save', class: 'btn btn-success'

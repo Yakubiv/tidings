@@ -15,7 +15,7 @@
         %tr
           %td
             - if post.thumbnail.url
-              = image_tag post.thumbnail.url(:thumb)
+              = image_tag post.thumbnail_url(:thumb)
           %td= post.title
           %td= post.description
           %td= post.url_alies

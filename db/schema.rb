@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(version: 2018_07_01_113720) do
     t.datetime "updated_at", null: false
     t.string "url_alies"
     t.string "thumbnail"
+    t.string "meta_tags", default: [], array: true
+    t.integer "category"
+    t.integer "status"
+    t.boolean "big_featured", default: false
+    t.boolean "featured", default: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

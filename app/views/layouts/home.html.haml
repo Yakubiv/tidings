@@ -1,13 +1,10 @@
 !!!
 %html
   %head
-    %title= t('brand.name')
+    %title Tidings
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    %section.c-pageheader
-      = render 'layouts/header'
-    %section.c-content
-      = yield
+  %body.home
+    = yield

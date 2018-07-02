@@ -30,6 +30,20 @@ body.home {
     width: 1440px;
     overflow: hidden;
   }
+
+  &--narrow {
+    .box {
+      max-width: 960px;
+    }
+  }
+}
+
+.c-content--narrow {
+  .c-content {
+    &__header {
+      padding: 0 8rem;
+    }
+  }
 }
 
 .c-pageheader {
@@ -119,6 +133,10 @@ body.home {
   overflow: hidden;
   position: relative;
 
+  &:hover::before {
+    opacity: .8;
+  }
+
   h1 {
     a {
       color: #FFFFFF;
@@ -146,6 +164,7 @@ body.home {
 
   &__info {
     position: relative;
+    color: #FFFFFF;
   }
 
   &__meta {
@@ -275,9 +294,10 @@ body.home {
     margin: 0;
     padding: 0;
     z-index: 501;
+    min-height: 60px;
 
     img {
-      width: 60px;
+      width: 350px;
     }
 
     a {

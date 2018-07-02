@@ -1,1 +1,15 @@
-Hello
+%section.c-pageheader.c-pageheader--home
+  = render 'layouts/header'
+  .c-pageheader-content.box
+    .u-full-widht
+      .featured
+        .featured__column.featured__column--big
+          = render 'featured', post: @home_facade.big_featured
+        .featured__column.featured__column--small
+          = render 'featured', post: @home_facade.featured_first
+          = render 'featured', post: @home_facade.featured_last
+
+%section.c-content
+  .c-content--wrap
+    .c-cards
+      = render partial: 'posts/post', collection: @home_facade.posts

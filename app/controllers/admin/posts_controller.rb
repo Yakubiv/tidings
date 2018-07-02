@@ -35,12 +35,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:title,
-                                 :description,
-                                 :content,
-                                 :url_alies,
-                                 :tags,
-                                 :thumbnail,
-                                 :thumbnail_cache)
+    params.require(:post).permit!
   end
 end
