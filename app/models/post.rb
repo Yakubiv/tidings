@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  FULL_DATE = '%B %d, %Y'
   mount_uploader :thumbnail, ThumbnailUploader
 
   enum category: { interesting: 1, culture: 2, news: 3, buity: 4 }

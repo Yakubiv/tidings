@@ -1,7 +1,7 @@
 %header.header
   .header__content.box
     .header__logo
-      %a{ href: '' }
+      %a{ href: root_path }
         = image_tag 'into-logo.png'
     %ul.header__social
       %li
@@ -15,10 +15,10 @@
     %nav.header__nav-wrap
       %ul.header__nav
         %li.current
-          %a{ href: '' } Home
+          %a{ href: root_path } Home
         %li
-          %a{ href: '' } Categories
+          %a{ href: posts_path } Categories
         %li
-          %a{ href: '' } About
+          %a{ href: about_path } About
         %li
-          %a{ href: '' } Contact
+          %a{ href: contact_path } Contact

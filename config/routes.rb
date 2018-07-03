@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :posts, only: %i[index show]
-
+  resource :about, only: :show
+  resource :contact, only: :show
   constraints Subdomain do
     namespace :admin do
       root 'dashboad#show'
