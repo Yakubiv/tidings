@@ -1,3 +1,9 @@
 en:
   brand:
     name: Інтонація
+
+  pages:
+    home: Головна
+    categories: Категорії
+    abouts: Про нас
+    contacts: Контакти

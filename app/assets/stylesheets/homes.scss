@@ -312,7 +312,7 @@ body.home {
       position: relative;
       padding: 0 2rem;
 
-      &.current a {
+      &.active a {
         color: white !important;
       }
 
@@ -381,6 +381,91 @@ body.home {
       display: inline-block;
       margin-right: 5px;
       padding-left: 0;
+    }
+  }
+}
+
+.c-popular {
+  background-color: #FFFFFF;
+  padding-top: 3.8rem;
+  padding-bottom: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+
+  .box {
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  &__about {
+    padding: 0 40px;
+
+    &-social {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.4rem;
+
+      li {
+        display: inline-block;
+        padding-left: 0;
+        margin-right: 9px;
+        color: #333;
+      }
+    }
+  }
+
+
+  h3 {
+    color: #333;
+    font-size: 1.7rem;
+    line-height: 0.75;
+    margin-bottom: 3rem;
+  }
+
+  &__posts {
+
+  }
+
+  &__post {
+    display: block;
+    position: relative;
+    padding-left: 8.5rem;
+    margin-bottom: 2.0rem;
+    min-height: 5.4rem;
+  }
+
+  &__meta {
+    font-size: 1.1rem;
+    line-height: 1.615;
+  }
+
+  h5 {
+    font-size: 1.4rem;
+    line-height: 1.3125;
+    margin-bottom: .3rem;
+    color: #333;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: .3rem;
+    left: 0;
+
+    img {
+      height: 4.9rem;
+      width: 6.9rem;
     }
   }
 }
