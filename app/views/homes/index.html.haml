@@ -15,7 +15,7 @@
       = render partial: 'posts/post', collection: @home_facade.posts
 
 %section.c-popular
-  .box.top
+  .c-popular__box.top
     .row
       .col-md-8
         %h3 Popular posts
@@ -41,3 +41,16 @@
               %i.fa.fa-instagram
             %li
               %i.fa.fa-twitter
+  .c-popular__box.c-tags__wrap
+    .col-full.c-tags
+      %h3 Tags
+      .c-tags__clound
+        %a{ href: '' } Popular
+        %a{ href: '' } Buity
+        %a{ href: '' } News
+        %a{ href: '' } Fasion
+        %a{ href: '' } Skin
+        %a{ href: '' } Interview
+        %a{ href: '' } Video
+        %a{ href: '' } Blog
+        %a{ href: '' } Popular
