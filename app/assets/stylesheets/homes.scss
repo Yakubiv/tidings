@@ -387,7 +387,7 @@ body.home {
 
 .c-popular {
   background-color: #FFFFFF;
-  padding: 3.8rem 0;
+  padding: 3.8rem;
   font-size: 1.2rem;
   line-height: 1.8;
   width: 100%;
@@ -424,7 +424,6 @@ body.home {
     }
   }
 
-
   h3 {
     color: #333;
     font-size: 1.7rem;
@@ -445,12 +444,12 @@ body.home {
   }
 
   &__meta {
-    font-size: 1.1rem;
+    font-size: .9rem;
     line-height: 1.615;
   }
 
   h5 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.3125;
     margin-bottom: .3rem;
     color: #333;
@@ -477,14 +476,15 @@ body.home {
 
   h3 {
     line-height: 1.375;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
+
   &__clound {
     a {
       display: inline-block;
       font-family: "metropolis-extrabold", sans-serif;
-      font-size: 1.3rem;
-      line-height: 3.6rem;
+      font-size: 1rem;
+      line-height: 2.6rem;
       text-transform: uppercase;
       letter-spacing: .2rem;
       padding: 0 2rem;
@@ -499,6 +499,60 @@ body.home {
         color: #FFFFFF;
         background: #151515;
       }
+    }
+  }
+}
+
+.c-footer {
+  padding-top: 5.2rem;
+  padding-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.4);
+
+  &__main {
+    margin-bottom: 1.8rem;
+  }
+
+  &__box {
+    width: 94%;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding-left: 0;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+  }
+
+  h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    padding-bottom: 2.1rem;
+    color: #FFFFFF;
+    margin-top: 0;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 120px;
+      background-color: rgba(255, 255, 255, 0.1);
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
   }
 }
