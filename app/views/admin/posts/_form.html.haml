@@ -28,17 +28,17 @@
         = f.text_field :url_alies, class: 'form-control'
       .form-group
         = f.label :tags
-        = f.text_field :tags, class: 'form-control'
+        = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'form-control'
       .form-group
         = f.label :meta_tags
         = f.text_field :meta_tags, class: 'form-control'
     .col-sm-6
       .form-group
         = f.label :category
-        = f.select :category, options_for_select(Post.categories.select), {}, class: 'form-control'
+        = f.select :category, options_for_select(Post.categories.select, f.object.category), {}, class: 'form-control'
       .form-group
         = f.label :status
-        = f.select :status, options_for_select(Post.statuses.select), {}, class: 'form-control'
+        = f.select :status, options_for_select(Post.statuses.select, f.object.status), {}, class: 'form-control'
       .form-group
         = f.label :big_featured
         = f.check_box :big_featured

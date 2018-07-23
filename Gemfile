@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem "font-awesome-rails"
 gem 'google-webfonts'
 gem 'haml-rails'
+gem 'acts-as-taggable-on'
 
 # Editor
 gem 'jquery-rails'

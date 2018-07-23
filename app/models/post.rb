@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   FULL_DATE = '%B %d, %Y'
   mount_uploader :thumbnail, ThumbnailUploader
 
+  acts_as_taggable_on :tags
+
   enum category: { interesting: 1, culture: 2, news: 3, buity: 4 }
   enum status: { draft: 1, published: 2 }
 
