@@ -3,11 +3,12 @@
   .c-pageheader-content.box
     .u-full-widht
       .featured
-        .featured__column.featured__column--big
-          = render 'featured', post: @home_facade.posts.first
-        .featured__column.featured__column--small
-          = render 'featured', post: @home_facade.posts.last
-          = render 'featured', post: @home_facade.posts.last
+        - if @home_facade.posts.any?
+          .featured__column.featured__column--big
+            = render 'featured', post: @home_facade.posts.first
+          .featured__column.featured__column--small
+            = render 'featured', post: @home_facade.posts.last
+            = render 'featured', post: @home_facade.posts.last
 
 %section.c-content
   .c-content--wrap
