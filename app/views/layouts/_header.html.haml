@@ -17,7 +17,13 @@
         %li{ class: active_if?(controller: 'homes') }
           %a{ href: root_path }= t('pages.home')
         %li{ class: active_if?(controller: 'posts', action: 'index') }
-          %a{ href: posts_path }= t('pages.categories')
+          .dropdown
+            %a.dropdown-toggle{ href: '', data: { toggle: 'dropdown' } }= t('pages.categories')
+
+            .dropdown-menu
+              %button.dropdown-item Action
+              %button.dropdown-item Another action
+              %button.dropdown-item Something else here
         %li{ class: active_if?(controller: 'abouts') }
           %a{ href: about_path }= t('pages.abouts')
         %li{ class: active_if?(controller: 'contacts') }
