@@ -1,11 +1,12 @@
-%a.c-card{ href: post_path(post) }
-  .c-card__thumb{ style: "background-image: url(#{post.thumbnail_url(:medium_thumb)})" }
-    .c-card__date
-      .c-card__date--day= post.created_at.strftime("%d")
-      .c-card__date--month= post.created_at.strftime("%b")
-  .c-card__content
-    %h1.c-card__title
-      = post.title
-    %p.c-card__description
-      = post.description
-    %span.c-card__actions
+%a{ href: post_path(post) }
+  .c-card
+    .c-card__thumb{ style: "background-image: url(#{post.thumbnail_url(:medium_thumb)})" }
+      .c-card__date
+        .c-card__date--day= post.created_at.strftime("%d")
+        .c-card__date--month= post.created_at.strftime("%b")
+    .c-card__content
+      %h1.c-card__title
+        = post.title
+      %p.c-card__description
+        = post.description
+      %span.c-card__actions

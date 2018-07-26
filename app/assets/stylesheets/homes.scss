@@ -30,9 +30,9 @@ body.home {
   padding-bottom: 2.4rem;
 
   &--wrap {
-    max-width: none;
-    width: 1440px;
+    width: 90%;
     overflow: hidden;
+    margin: 0 auto;
   }
 
   &--narrow {
