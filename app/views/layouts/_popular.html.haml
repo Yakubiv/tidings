@@ -1,0 +1,33 @@
+%section.c-popular
+  .c-popular__box.top
+    .row
+      .col-md-8
+        %h3 Popular posts
+        .row.c-popular__posts
+          - posts.each do |post|
+            .col-md-6
+              .c-popular__post
+                .c-popular__thumb
+                  = image_tag post.thumbnail_url(:medium_thumb)
+                %h5= post.title
+                .c-popular__meta
+                  = post.created_at.strftime(Post::FULL_DATE)
+      .col-md-4
+        .c-popular__about
+          %h3 Коротко про нас
+          %p
+            sakd sjkhfasfajkh fkjasfa
+            s ajksa fhsa f
+          %ul.c-popular__about-social
+            %li
+              %i.fa.fa-facebook
+            %li
+              %i.fa.fa-instagram
+            %li
+              %i.fa.fa-twitter
+  .c-popular__box.c-tags__wrap
+    .col-full.c-tags
+      %h3 Tags
+      .c-tags__clound
+        - ActsAsTaggableOn::Tag.all.each do |tag|
+          %a{ href: posts_path(tag: tag) }= tag

@@ -13,66 +13,8 @@
 %section.c-content
   .c-content--wrap
     .c-cards
-      = render partial: 'posts/post', collection: @home_facade.posts
+      = render partial: 'posts/post', collection: @home_facade.posts, cached: true
 
-%section.c-popular
-  .c-popular__box.top
-    .row
-      .col-md-8
-        %h3 Popular posts
-        .row.c-popular__posts
-          - Post.all.each do |post|
-            .col-md-6
-              .c-popular__post
-                .c-popular__thumb
-                  = image_tag post.thumbnail_url(:medium_thumb)
-                %h5= post.title
-                .c-popular__meta
-                  = post.created_at.strftime(Post::FULL_DATE)
-      .col-md-4
-        .c-popular__about
-          %h3 Коротко про нас
-          %p
-            sakd sjkhfasfajkh fkjasfa
-            s ajksa fhsa f
-          %ul.c-popular__about-social
-            %li
-              %i.fa.fa-facebook
-            %li
-              %i.fa.fa-instagram
-            %li
-              %i.fa.fa-twitter
-  .c-popular__box.c-tags__wrap
-    .col-full.c-tags
-      %h3 Tags
-      .c-tags__clound
-        - ActsAsTaggableOn::Tag.all.each do |tag|
-          %a{ href: posts_path(tag: tag) }= tag
-%section.c-footer
-  .c-footer__main
-    .c-footer__box
-      .row
-        .col-md-2
-          %h4 Quick Links
-          %ul.c-footer__links
-            %li
-              %a{ href: root_path } Home
-            %li
-              %a{ href: contact_path } Contacts
-            %li
-              %a{ href: about_path } About
-        .col-md-2
-          %h4 Social links
-          %ul.c-footer__links
-            %li
-              %a{ href: root_path } Instagram
-            %li
-              %a{ href: contact_path } Facebook
-        .col-md-3
-        .col-md-5
-          %h4 Our newsletters
-          %p ajskh fkjsaf jkhasj asjhf jkas jjksf hjkashf jhkas jahs jkasf
-  .c-footer__bottom
-    .c-footer__box
-      .c-footer__copyright
-        %span © Intonacia 2018
+
+= render 'layouts/popular', posts: Post.all
+= render 'layouts/footer'
