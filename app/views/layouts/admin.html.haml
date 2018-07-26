@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title Tidings
+    %title= t('brand.name')
+    %meta{ content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", name: "viewport"}
+    %meta{ content: "text/html; charset=utf-8", "http-equiv" => "content-type"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'

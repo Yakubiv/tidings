@@ -72,6 +72,10 @@ body.home {
       font-weight: 400;
       font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
 
+      img {
+        width: 100%;  
+      }
+
       @media screen and (max-width: $lg) {
         padding: 0;
       }
@@ -95,6 +99,10 @@ body.home {
         font-weight: 300;
         margin-top: 0;
         letter-spacing: .04rem;
+
+        @media screen and (max-width: $md) {
+          font-size: 1.8rem;
+        }
       }
 
       &-meta {
