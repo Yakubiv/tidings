@@ -21,9 +21,9 @@
             %a.dropdown-toggle{ href: '', data: { toggle: 'dropdown' } }= t('pages.categories')
 
             .dropdown-menu
-              %button.dropdown-item Action
-              %button.dropdown-item Another action
-              %button.dropdown-item Something else here
+              - Post.categories.each_pair do |key, value|
+                %a.dropdown-item{ href: posts_path(category: key), class: active_if?(category: key) }= Post.human_enum_name(:category, key.to_sym)
+
         %li{ class: active_if?(controller: 'abouts') }
           %a{ href: about_path }= t('pages.abouts')
         %li{ class: active_if?(controller: 'contacts') }

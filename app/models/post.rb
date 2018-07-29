@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 
   acts_as_taggable_on :tags
 
-  enum category: { interesting: 1, culture: 2, news: 3, buity: 4 }
+  enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7 }
   enum status: { draft: 1, published: 2 }
 
   validates :title, presence: true

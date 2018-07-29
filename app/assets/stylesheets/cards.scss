@@ -2,6 +2,8 @@
   column-count: 5;
   column-gap: 15px;
   column-fill: auto;
+  padding-top: 20px;
+
   @media screen and (max-width: $lg) {
     column-count: 2;
   }
@@ -19,6 +21,7 @@
   min-height: 100%;
   position: relative;
   break-inside: avoid;
+  margin-bottom: 20px;
 
   &__date {
     position: absolute;

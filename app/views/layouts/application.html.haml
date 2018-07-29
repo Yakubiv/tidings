@@ -12,6 +12,7 @@
     %section.c-pageheader
       = render 'layouts/header'
     %section.c-content
-      = yield
+      .c-content--wrap
+        = yield
     = render 'layouts/popular', posts: Post.all
     = render 'layouts/footer'

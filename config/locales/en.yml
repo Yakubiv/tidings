@@ -1,4 +1,15 @@
 en:
+  activerecord:
+    attributes:
+      post:
+        categories:
+          interesting: Цікаве
+          culture: Культура
+          news: Новина
+          buity: Краса
+          important: Важливо
+          art: Арт
+          other: Інше
   brand:
     name: Інтонація
 
@@ -7,3 +18,6 @@ en:
     categories: Категорії
     abouts: Про нас
     contacts: Контакти
+    popular: Популярні статті
+    about_us:  Коротко про нас
+    tags: Теги

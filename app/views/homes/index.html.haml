@@ -15,6 +15,5 @@
     .c-cards
       = render partial: 'posts/post', collection: @home_facade.posts, cached: true
 
-
 = render 'layouts/popular', posts: Post.all
 = render 'layouts/footer'
