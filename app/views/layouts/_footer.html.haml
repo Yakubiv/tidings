@@ -2,25 +2,27 @@
   .c-footer__main
     .c-footer__box
       .row
-        .col-md-2
-          %h4 Quick Links
-          %ul.c-footer__links
-            %li
-              %a{ href: root_path } Home
-            %li
-              %a{ href: contact_path } Contacts
-            %li
-              %a{ href: about_path } About
-        .col-md-2
-          %h4 Social links
-          %ul.c-footer__links
-            %li
-              %a{ href: root_path } Instagram
-            %li
-              %a{ href: contact_path } Facebook
         .col-md-3
+          %h4= t('pages.quick_links')
+          %ul.c-footer__links
+            %li
+              %a{ href: root_path }= t('pages.home')
+            %li
+              %a{ href: contact_path }= t('pages.contacts')
+            %li
+              %a{ href: about_path }= t('pages.abouts')
+        .col-md-3
+          %h4= t('pages.social_links')
+          %ul.c-footer__links
+            %li
+              %a{ href: root_path }= t('pages.instagram')
+            %li
+              %a{ href: contact_path }= t('pages.facebook')
+            %li
+              %a{ href: contact_path }= t('pages.telegram')
+        .col-md-1
         .col-md-5
-          %h4 Our newsletters
+          %h4= t('pages.newsletters')
           %p ajskh fkjsaf jkhasj asjhf jkas jjksf hjkashf jhkas jahs jkasf
   .c-footer__bottom
     .c-footer__box
