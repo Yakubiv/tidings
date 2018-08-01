@@ -5,13 +5,13 @@
         = image_tag 'into-logo.png'
     %ul.header__social
       %li
-        %i.fa.fa-facebook
+        %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank' }
+          %i.fa.fa-facebook
       %li
-        %i.fa.fa-instagram
-      %li
-        %i.fa.fa-twitter
+        %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank' }
+          %i.fa.fa-instagram
     .header__search
-      Search
+      -# Search
     %nav.header__nav-wrap
       %ul.header__nav
         %li{ class: active_if?(controller: 'homes') }
