@@ -4,7 +4,7 @@ class HomeFacade
   end
 
   def featured_first
-    featured.first
+    featured.last(2).first
   end
 
   def featured_last
