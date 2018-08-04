@@ -3,28 +3,28 @@ en:
     attributes:
       post:
         categories:
-          interesting: Цікаве
+          interesting: Интересное
           culture: Культура
-          news: Новина
-          buity: Краса
-          important: Важливо
+          news: Новости
+          buity: Красота
+          important: Важно
           art: Арт
-          other: Інше
+          other: Другое
   brand:
-    name: Інтонація
+    name: Интонация
 
   pages:
-    home: Головна
-    categories: Категорії
-    abouts: Про нас
-    contacts: Контакти
-    popular: Популярні статті
-    about_us:  Коротко про нас
+    home: Главная
+    categories: Категории
+    abouts: О нас
+    contacts: Контакты
+    popular: Популярные статьи
+    about_us:  Коротко о нас
     tags: Теги
-    newsletters: Наші оновлення
-    quick_links: Швидкі посилання
-    social_links: Соціальні мережі
-    instagram: Інстаграм
+    newsletters: Наши обновления
+    quick_links: Ссылки
+    social_links: Социальные сети
+    instagram: Инстаграм
     facebook: Фейсбук
     telegram: Телеграм
 

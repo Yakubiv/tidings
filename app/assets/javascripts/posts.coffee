@@ -3,4 +3,8 @@ ready = ->
     CKEDITOR.replace $(this).attr('id')
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)
+
+$(document).on 'turbolinks:load', ->
+  $('.c-cards').masonry
+    itemSelector: '.c-card-box'
