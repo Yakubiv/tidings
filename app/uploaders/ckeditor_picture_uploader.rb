@@ -6,7 +6,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   storage :fog
 
   def store_dir
-    "#{Rails.env}/uploads/ckeditor/pictures/#{model.id}"
+    "uploads/#{Rails.env}/ckeditor/pictures/#{model.id}"
   end
 
   process :extract_dimensions

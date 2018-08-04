@@ -11,4 +11,4 @@
         = post.description
       %span.c-card__actions
         - tags = post.tags.map { |tag| link_to tag.name, posts_path(tag: tag.name) }
-        = tags.join(', ').html_safe 
+        = tags.join(', ').html_safe
