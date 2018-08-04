@@ -5,10 +5,10 @@
       .featured
         - if @home_facade.posts.any?
           .featured__column.featured__column--big
-            = render 'featured', post: @home_facade.posts.first
+            = render 'featured', post: @home_facade.big_featured
           .featured__column.featured__column--small
-            = render 'featured', post: @home_facade.posts.last
-            = render 'featured', post: @home_facade.posts.last
+            = render 'featured', post: @home_facade.featured_first
+            = render 'featured', post: @home_facade.featured_first
 
 %section.c-content
   .c-content--wrap

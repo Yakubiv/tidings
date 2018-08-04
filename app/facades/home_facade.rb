@@ -1,6 +1,6 @@
 class HomeFacade
   def big_featured
-    posts.detect { |p| p.big_featured == true }
+    posts.detect { |p| p.big_featured }
   end
 
   def featured_first
@@ -18,6 +18,6 @@ class HomeFacade
   private
 
   def featured
-    @featured ||= posts.select { |p| p.featured == true }
+    @featured ||= posts.select { |p| p.featured }
   end
 end
