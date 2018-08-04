@@ -16,11 +16,13 @@ en:
   pages:
     home: Главная
     categories: Категории
+    category: Категория
     abouts: О нас
     contacts: Контакты
     popular: Популярные статьи
     about_us:  Коротко о нас
     tags: Теги
+    tag: Тег
     newsletters: Наши обновления
     quick_links: Ссылки
     social_links: Социальные сети

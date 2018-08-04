@@ -1,2 +1,9 @@
+.c-content__header.col-full
+  %h1.c-content__header-option
+    - unless params[:category].blank?
+      %i.fa.fa-quote-right
+      #{Post.human_enum_name(:category, params[:category])}
+    - unless params[:tag].blank?
+      %p ##{params[:tag].titleize}
 .c-cards
   = render partial: 'posts/post', collection: @posts, cached: true

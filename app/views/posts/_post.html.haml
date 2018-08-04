@@ -1,12 +1,14 @@
-%a{ href: post_path(post), class: 'c-card-box' }
+.c-card-box
   .c-card
-    .c-card__thumb{ style: "background-image: url(#{post.thumbnail_url(:medium_thumb)})" }
-      .c-card__date
-        .c-card__date--day= post.created_at.strftime("%d")
-        .c-card__date--month= post.created_at.strftime("%b")
+    %a{ href: post_path(post) }
+      .c-card__thumb{ style: "background-image: url(#{post.thumbnail_url(:medium_thumb)})" }
+        .c-card__category
+          = Post.human_enum_name(:category, post.category)
     .c-card__content
       %h1.c-card__title
-        = post.title
+        = link_to post.title, post
       %p.c-card__description
         = post.description
       %span.c-card__actions
+        - tags = post.tags.map { |tag| link_to tag.name, posts_path(tag: tag.name) }
+        = tags.join(', ').html_safe 

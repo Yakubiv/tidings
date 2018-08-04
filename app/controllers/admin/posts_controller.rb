@@ -30,11 +30,18 @@ class Admin::PostsController < Admin::BaseController
 
   private
 
+  def meta_tags
+    params[:meta_tags].split(',')
+  end
+
   def set_post
     @post = Post.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit!
+    params.require(:post).permit(:title, :description, :url_alies, :category,
+                                 :status, :big_featured,
+                                 :featured, :popular, :tag_list,
+                                 :content, :thumbnail).merge(meta_tags: meta_tags)
   end
 end

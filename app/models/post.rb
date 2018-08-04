@@ -13,6 +13,12 @@ class Post < ApplicationRecord
     url_alies
   end
 
+  def to_meta_tags
+    { title: title,
+      description: description,
+      keywords: meta_tags.join(', ') }
+  end
+
   def self.find(input)
     if input.is_a?(Integer)
       super

@@ -16,7 +16,7 @@
       %ul.header__nav
         %li{ class: active_if?(controller: 'homes') }
           %a{ href: root_path }= t('pages.home')
-        %li{ class: active_if?(controller: 'posts', action: 'index') }
+        %li{ class: active_if?(controller: 'posts', action: 'index', category: params[:category]) }
           .dropdown
             %a.dropdown-toggle{ href: '', data: { toggle: 'dropdown' } }= t('pages.categories')
 
