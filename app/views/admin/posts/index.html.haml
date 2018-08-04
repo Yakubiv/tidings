@@ -6,7 +6,6 @@
       %tr
         %th
         %th Title
-        %th Description
         %th URL
         %th
 
@@ -17,7 +16,6 @@
             - if post.thumbnail.url
               = image_tag post.thumbnail_url(:thumb)
           %td= post.title
-          %td= post.description
           %td= post.url_alies
           %td
             = link_to edit_admin_post_path(post) do

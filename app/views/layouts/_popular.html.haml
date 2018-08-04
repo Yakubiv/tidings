@@ -6,7 +6,7 @@
         .row.c-popular__posts
           - posts.each do |post|
             .col-md-6
-              .c-popular__post
+              %a.c-popular__post{ href: post_path(post) }
                 .c-popular__thumb
                   = image_tag post.thumbnail_url(:medium_thumb)
                 %h5= post.title
@@ -28,4 +28,4 @@
       %h3= t('pages.tags')
       .c-tags__clound
         - ActsAsTaggableOn::Tag.all.each do |tag|
-          %a{ href: posts_path(tag: tag) }= tag
+          %a{ href: posts_path(tag: tag.to_s) }= tag
