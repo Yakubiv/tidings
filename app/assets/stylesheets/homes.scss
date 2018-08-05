@@ -112,6 +112,24 @@ body.home {
       }
     }
 
+    &__actions {
+      margin-top: 3rem;
+      padding-left: 6rem;
+      padding-right: 6rem;
+      font-size: 21px;
+      line-height: 1.58;
+      letter-spacing: -.003em;
+      font-weight: 400;
+
+      a {
+        color: $brand-black;
+      }
+
+      @media screen and (max-width: $md) {
+        padding: 0;
+      }
+    }
+
     &__header {
       padding: 0 8rem;
       text-align: center;
@@ -141,6 +159,8 @@ body.home {
         line-height: 1.8;
         position: relative;
         padding: 0;
+
+        a { color: $brand-black; }
 
         li {
           display: inline-block;

@@ -6,12 +6,15 @@
       %h1.c-content__header-title
         = @post.title
       %ul.c-content__header-meta
-        %li.date= @post.created_at.strftime(Post::FULL_DATE)
-        %li.cat
-          in
-          %a{ href: posts_path }= @post.category
+        %li.date= l @post.created_at, format: Post::FULL_DATE
+        %li.category
+          %a{ href: posts_path }= Post.human_enum_name(:category, @post.category)
     .c-content__media.col-full
       .c-content__thumb
         = image_tag @post.thumbnail_url(:big_thumb), width: "100%"
     .c-content__main
       = raw @post.content
+    .c-content__actions
+      - tags = @post.tags.map { |tag| link_to tag.name, posts_path(tag: tag.name) }
+      %span #{t('pages.tags')}:
+      = tags.join(', ').html_safe
