@@ -4,11 +4,11 @@ class HomeFacade
   end
 
   def featured_first
-    featured.last(2).first
+    featured.first(2).last
   end
 
   def featured_last
-    featured.last
+    featured.first
   end
 
   def posts

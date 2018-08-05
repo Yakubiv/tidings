@@ -8,5 +8,5 @@
     %section.c-content
       .c-content--wrap
         = yield
-    = render 'layouts/popular', posts: Post.where(popular: true).last(6)
+    = render 'layouts/popular', posts: Post.where(popular: true).first(6)
     = render 'layouts/footer'
