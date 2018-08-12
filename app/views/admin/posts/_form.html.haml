@@ -31,7 +31,7 @@
         = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'form-control'
       .form-group
         = f.label :meta_tags
-        = text_field_tag :meta_tags, f.object.meta_tags.join(', s'), class: 'form-control'
+        = text_field_tag :meta_tags, f.object.meta_tags.join(', '), class: 'form-control'
     .col-sm-6
       .form-group
         = f.label :category
