@@ -22,10 +22,6 @@ class Post < ApplicationRecord
   end
 
   def self.find(input)
-    if input.is_a?(Integer)
-      super
-    else
-      find_by_url_alies(input)
-    end
+    find_by(url_alies: input)
   end
 end
