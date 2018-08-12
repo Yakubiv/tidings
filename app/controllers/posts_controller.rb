@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.send(filter_options)
-    @posts = Post.tagged_with(params[:tag]) unless params[:tag].blank?
+    @posts = Post.includes(:tags).send(filter_options)
+    @posts = Post.includes(:tags).tagged_with(params[:tag]) unless params[:tag].blank?
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:tags).find(params[:id])
   end
 
   private

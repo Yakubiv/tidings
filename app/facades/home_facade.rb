@@ -11,8 +11,12 @@ class HomeFacade
     featured.first
   end
 
+  def popular_posts
+    posts.where(popular: true).first(6)
+  end
+
   def posts
-    @posts ||= Post.where(status: :published)
+    @posts ||= Post.includes(:tags).where(status: :published)
   end
 
   private
