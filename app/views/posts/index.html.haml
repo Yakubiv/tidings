@@ -5,5 +5,8 @@
       #{Post.human_enum_name(:category, params[:category])}
     - unless params[:tag].blank?
       %p ##{params[:tag].titleize}
-.c-cards
-  = render partial: 'posts/post', collection: @posts, cached: true
+- if @posts.any?
+  .c-cards
+    = render partial: 'posts/post', collection: @posts, cached: true
+- else
+  = render 'layouts/blank_slate', records: 'Статтей'
