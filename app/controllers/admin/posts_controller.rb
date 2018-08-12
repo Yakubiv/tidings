@@ -40,7 +40,7 @@ class Admin::PostsController < Admin::BaseController
 
   def post_params
     params.require(:post).permit(:title, :description, :url_alies, :category,
-                                 :status, :big_featured,
+                                 :status, :big_featured, :next_post_id, :back_post_id,
                                  :featured, :popular, :tag_list,
                                  :content, :thumbnail).merge(meta_tags: meta_tags)
   end

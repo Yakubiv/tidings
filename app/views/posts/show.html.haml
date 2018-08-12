@@ -14,7 +14,11 @@
         = image_tag @post.thumbnail.url(:big_thumb), width: "100%"
     .c-content__main
       = raw @post.content
+    - if @post.back_post
+      .c-content__actions
+        = t('posts.read_more')
+        = link_to @post.back_post, @post.back_post, class: 'link'
+        = link_to @post.next_post, @post.next_post, class: 'link'
     .c-content__actions
-      - tags = @post.tags.map { |tag| link_to tag.name, posts_path(tag: tag.name) }
-      %span #{t('pages.tags')}:
-      = tags.join(', ').html_safe
+      - @post.tags.each do |tag|
+        = link_to tag.name, posts_path(tag: tag.name), class: 'tag'

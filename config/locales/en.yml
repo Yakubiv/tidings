@@ -17,6 +17,9 @@ en:
     subscriptions:
       email: Ваш Email
 
+  posts:
+    read_more: 'Читайте также:'
+
   pages:
     no_results: '%{records} не найдено.'
     home: Главная
