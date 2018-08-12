@@ -11,6 +11,7 @@ SitemapGenerator::Sitemap.create do
   # Defaults: :priority => 0.5, :changefreq => 'weekly',
   #           :lastmod => Time.now, :host => default_host
   #
+  add root_path, priority: 0.7, changefreq: 'daily'
   add posts_path, priority: 0.7, changefreq: 'daily'
 
   Post.find_each do |post|
