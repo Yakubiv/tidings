@@ -13,6 +13,10 @@ en:
   brand:
     name: Интонация
 
+  forms:
+    subscriptions:
+      email: Ваш Email
+
   pages:
     no_results: '%{records} не найдено.'
     home: Главная

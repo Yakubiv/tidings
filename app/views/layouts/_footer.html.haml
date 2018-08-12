@@ -21,7 +21,12 @@
         .col-md-1
         .col-md-5
           %h4= t('pages.newsletters')
-          %p
+          %p Получайте обновления первыми
+          = form_for Subscription.new do |f|
+            .input-group
+              = f.email_field :email, placeholder: 'Ваш Email', class: 'form-control form-control-lg'
+              .input-group-append
+                = submit_tag 'Send', class: 'btn btn-primary btn-lg u-br-n'
   .c-footer__bottom
     .c-footer__box
       .c-footer__copyright

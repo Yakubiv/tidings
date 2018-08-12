@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index show]
   resource :about, only: :show
   resource :contact, only: :show
+  resources :subscriptions, only: :create
   constraints Subdomain do
     namespace :admin do
       root 'dashboad#show'
