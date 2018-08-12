@@ -11,7 +11,7 @@
           %a{ href: posts_path }= Post.human_enum_name(:category, @post.category)
     .c-content__media.col-full
       .c-content__thumb
-        = image_tag @post.thumbnail_url(:big_thumb), width: "100%"
+        = image_tag @post.thumbnail.url(:big_thumb), width: "100%"
     .c-content__main
       = raw @post.content
     .c-content__actions

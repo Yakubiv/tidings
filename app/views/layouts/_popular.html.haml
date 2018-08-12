@@ -8,7 +8,7 @@
             .col-md-6
               %a.c-popular__post{ href: post_path(post) }
                 .c-popular__thumb
-                  = image_tag post.thumbnail_url(:medium_thumb)
+                  = image_tag post.thumbnail.url(:medium_thumb)
                 %h5= post.title
                 .c-popular__meta
                   = post.created_at.strftime(Post::FULL_DATE)

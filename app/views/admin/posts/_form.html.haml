@@ -16,7 +16,7 @@
     = f.file_field :thumbnail
     = f.hidden_field :thumbnail_cache
     - if f.object.thumbnail.url
-      = image_tag f.object.thumbnail_url(:thumb)
+      = image_tag f.object.thumbnail.url(:thumb)
 
   .form-group
     = f.cktext_area :content

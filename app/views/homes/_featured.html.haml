@@ -1,4 +1,4 @@
-.entry{ style: "background-image: url(#{post.thumbnail_url(:big_thumb)})" }
+.entry{ style: "background-image: url(#{post.thumbnail.url(:big_thumb)})" }
   .entry__content
     %span.entry__category
       %a{ href: posts_path }= Post.human_enum_name(:category, post.category)
