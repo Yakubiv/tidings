@@ -19,7 +19,7 @@ class Post < ApplicationRecord
   end
 
   def self.to_select(post)
-    query = post.persisted? ? { id: post.id } : nil
+    query = post.persisted? ? { id: post.id } : {}
     Post.published.where.not(query).map { |p| [p.title, p.id] }
   end
 
