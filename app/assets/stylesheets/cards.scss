@@ -60,6 +60,24 @@
     padding-bottom: 80%;
     background-size: cover;
     background-position: center center;
+
+    &:hover::before {
+      opacity: .2;
+    }
+
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-bottom: 80%;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+      opacity: 0;
+      background-color: #151515;
+    }
   }
 
   &__content {
