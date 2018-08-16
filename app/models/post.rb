@@ -7,8 +7,8 @@ class Post < ApplicationRecord
   enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7 }
   enum status: { draft: 1, published: 2 }
 
-  belongs_to :next_post, foreign_key: :next_post_id, class_name: 'Post'
-  belongs_to :back_post, foreign_key: :back_post_id, class_name: 'Post'
+  belongs_to :next_post, foreign_key: :next_post_id, class_name: 'Post', optional: true
+  belongs_to :back_post, foreign_key: :back_post_id, class_name: 'Post', optional: true
 
   validates :title, presence: true
 

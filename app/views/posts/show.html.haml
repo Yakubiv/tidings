@@ -17,8 +17,8 @@
     - if @post.back_post
       .c-content__actions
         = t('posts.read_more')
-        = link_to @post.back_post, @post.back_post, class: 'link'
-        = link_to @post.next_post, @post.next_post, class: 'link'
+        = link_to @post.back_post, @post.back_post, class: 'link' if @post.back_post
+        = link_to @post.next_post, @post.next_post, class: 'link' if @post.next_post
     .c-content__actions
       - @post.tags.each do |tag|
         = link_to tag.name, posts_path(tag: tag.name), class: 'tag'

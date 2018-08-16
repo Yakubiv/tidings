@@ -25,10 +25,10 @@
     .col-sm-6
       .form-group
         = f.label :next_post_id
-        = f.select :next_post_id, options_for_select(Post.to_select(f.object), f.object.next_post_id), {}, class: 'form-control'
+        = f.select :next_post_id, options_for_select(Post.to_select(f.object), f.object.next_post_id), { include_blank: 'Nothing' }, class: 'form-control'
       .form-group
         = f.label :back_post_id
-        = f.select :back_post_id, options_for_select(Post.to_select(f.object), f.object.back_post_id), {}, class: 'form-control'
+        = f.select :back_post_id, options_for_select(Post.to_select(f.object), f.object.back_post_id), { include_blank: 'Nothing' }, class: 'form-control'
       .form-group
         = f.label :url_alies
         = f.text_field :url_alies, class: 'form-control'
