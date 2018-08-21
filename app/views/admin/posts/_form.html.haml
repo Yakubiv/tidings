@@ -34,7 +34,9 @@
         = f.text_field :url_alies, class: 'form-control'
       .form-group
         = f.label :tags
-        = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'form-control'
+        = f.autocomplete_field :tag_list, autocomplete_tag_name_admin_posts_path, value: f.object.tag_list.to_s, |
+                                          multiple: true, 'data-delimiter' => ', ', class: 'form-control', |
+                                          'data-auto-focus' => true
       .form-group
         = f.label :meta_tags
         = text_field_tag :meta_tags, f.object.meta_tags.join(', '), class: 'form-control'

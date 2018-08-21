@@ -1,5 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   before_action :set_post, only: [:edit, :update, :destroy]
+  autocomplete :tag, :name, class_name: 'ActsAsTaggableOn::Tag'
 
   def index
     @posts = Post.all
@@ -41,7 +42,7 @@ class Admin::PostsController < Admin::BaseController
   def post_params
     params.require(:post).permit(:title, :description, :url_alies, :category,
                                  :status, :big_featured, :next_post_id, :back_post_id,
-                                 :featured, :popular, :tag_list,
-                                 :content, :thumbnail).merge(meta_tags: meta_tags)
+                                 :featured, :popular,
+                                 :content, :thumbnail, tag_list: []).merge(meta_tags: meta_tags)
   end
 end

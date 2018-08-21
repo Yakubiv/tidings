@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   constraints Subdomain do
     namespace :admin do
       root 'dashboad#show'
-      resources :posts
+      resources :posts do
+        get :autocomplete_tag_name, on: :collection
+      end
       resource :dashboard, only: :show
     end
   end

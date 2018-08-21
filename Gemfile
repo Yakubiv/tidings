@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem "font-awesome-rails"
 gem 'google-webfonts'
 gem 'haml-rails'
+gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
 gem 'acts-as-taggable-on'
 gem 'rack-cors', require: 'rack/cors'
