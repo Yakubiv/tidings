@@ -1,0 +1,27 @@
+.c-content__header.col-full
+  %h1.c-content__header-option
+    = t('pages.contacts')
+
+%article.c-content--narrow
+  .box.c-contacts
+    .c-contacts-map
+      %iframe{ allowfullscreen: "true", frameborder: "0", height: "450", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyAHseJntomys2tuxhNQuadG8H5_lMW7OLc\r\n&q=Heroiv+UPA+Str+Lviv+UKraine", style: "border:0", width: '100%' }
+    .row
+      .col-sm-6
+        %h4= t('contacts.info')
+        %p
+          = t('contacts.email')
+    .c-contacts-form
+      %h4.title= t('contacts.form')
+      = form_for Contact.new do |f|
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control', requred: true
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control', requred: true
+        .form-group
+          = f.label :content
+          = f.text_area :content, class: 'form-control', requred: true, rows: 5
+        .form-group
+          = f.submit t('contacts.submit').html_safe, class: 'btn btn-secondary'

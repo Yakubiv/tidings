@@ -3,7 +3,7 @@
     %a{ href: post_path(post) }
       .c-card__thumb{ style: "background-image: url(#{post.thumbnail.url(:medium_thumb)})" }
         .c-card__category
-          = Post.human_enum_name(:category, post.category)
+          = post.show_category
     .c-card__content
       %h1.c-card__title
         = link_to post.title, post

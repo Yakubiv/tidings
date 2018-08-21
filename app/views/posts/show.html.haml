@@ -8,7 +8,9 @@
       %ul.c-content__header-meta
         %li.date= l @post.created_at, format: Post::FULL_DATE
         %li.category
-          %a{ href: posts_path }= Post.human_enum_name(:category, @post.category)
+          %a{ href: posts_path }
+            %i.fa.fa-quote-right.u-sm
+            = @post.show_category
     .c-content__media.col-full
       .c-content__thumb
         = image_tag @post.thumbnail.url(:big_thumb), width: "100%"

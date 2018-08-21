@@ -33,6 +33,10 @@ class Post < ApplicationRecord
       keywords: meta_tags.join(', ') }
   end
 
+  def show_category
+    Post.human_enum_name(:category, category)
+  end
+
   def self.find(input)
     find_by(url_alies: input)
   end

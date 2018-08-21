@@ -1,4 +1,10 @@
 en:
+  helpers:
+    label:
+      contact:
+        name: Имя
+        email: Почта
+        content: Сообщение
   activerecord:
     attributes:
       post:
@@ -19,6 +25,15 @@ en:
 
   posts:
     read_more: 'Читайте также:'
+
+  contacts:
+    info: Контактная информация
+    email: intonacia2018@gmail.com
+    form: Спросите что нибудь
+    submit: Спросить
+
+    create:
+      success: Спасибо, мы ответим вам в ближайшее время
 
   pages:
     no_results: '%{records} не найдено.'

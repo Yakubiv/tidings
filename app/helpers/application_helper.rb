@@ -13,4 +13,17 @@ module ApplicationHelper
   def fullpath_starts_with?(path)
     request.fullpath =~ /^\/#{Regexp.quote(path)}/
   end
+
+  def flash_class(level)
+    case level
+    when 'notice'
+      "alert alert-info"
+    when 'success'
+      "alert alert-success"
+    when 'error'
+      "alert alert-error"
+    when 'alert'
+      "alert alert-error"
+    end
+  end
 end

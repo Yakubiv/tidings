@@ -23,8 +23,5 @@
             .dropdown-menu
               - Post.categories.each_pair do |key, value|
                 %a.dropdown-item{ href: posts_path(category: key), class: active_if?(category: key) }= Post.human_enum_name(:category, key.to_sym)
-
-        %li{ class: active_if?(controller: 'abouts') }
-          %a{ href: about_path }= t('pages.abouts')
         %li{ class: active_if?(controller: 'contacts') }
-          %a{ href: contact_path }= t('pages.contacts')
+          %a{ href: contacts_path }= t('pages.contacts')

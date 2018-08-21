@@ -9,6 +9,7 @@
       = render 'layouts/header'
     %section.c-content
       .c-content--wrap
+        = render 'layouts/alerts'
         = yield
     = render 'layouts/popular', posts: Post.where(popular: true).first(6)
     = render 'layouts/footer'
