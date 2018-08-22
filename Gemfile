@@ -18,6 +18,8 @@ gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
 gem 'acts-as-taggable-on'
 gem 'rack-cors', require: 'rack/cors'
+gem 'dalli'
+gem 'redis-store'
 
 # Editor
 gem 'jquery-rails'
