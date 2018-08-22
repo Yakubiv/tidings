@@ -3,7 +3,8 @@
   %head
     %title= t('brand.name')
     = render 'layouts/ga' if Rails.env.production?
-    = render 'layouts/head'
+    = cache 'head' do
+      = render 'layouts/head'
   %body.main
     %section.c-pageheader
       = render 'layouts/header'

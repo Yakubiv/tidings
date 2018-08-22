@@ -5,10 +5,13 @@
       .featured
         - if @home_facade.posts.any?
           .featured__column.featured__column--big
-            = render 'featured', post: @home_facade.big_featured
+            = cache @home_facade.big_featured do
+              = render 'featured', post: @home_facade.big_featured
           .featured__column.featured__column--small
-            = render 'featured', post: @home_facade.featured_first
-            = render 'featured', post: @home_facade.featured_last
+            = cache @home_facade.featured_first do
+              = render 'featured', post: @home_facade.featured_first
+            = cache @home_facade.featured_last do
+              = render 'featured', post: @home_facade.featured_last
 
 %section.c-content
   .c-content--wrap

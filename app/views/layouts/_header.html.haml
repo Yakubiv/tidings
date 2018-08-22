@@ -1,17 +1,18 @@
 %header.header#header
   .header__content.box
-    .header__logo
-      %a{ href: root_path }
-        = image_tag 'into-logo.png'
-    %ul.header__social
-      %li
-        %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank' }
-          %i.fa.fa-facebook
-      %li
-        %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank' }
-          %i.fa.fa-instagram
-    .header__search
-      -# Search
+    = cache 'header_info' do
+      .header__logo
+        %a{ href: root_path }
+          = image_tag 'into-logo.png'
+      %ul.header__social
+        %li
+          %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank' }
+            %i.fa.fa-facebook
+        %li
+          %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank' }
+            %i.fa.fa-instagram
+      .header__search
+        -# Search
     %nav.header__nav-wrap
       %ul.header__nav
         %li{ class: active_if?(controller: 'homes') }

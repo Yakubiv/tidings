@@ -2,6 +2,7 @@
 %html
   %head
     = render 'layouts/ga' if Rails.env.production?
-    = render 'layouts/head'
+    = cache 'head' do
+      = render 'layouts/head'
   %body.home
     = yield

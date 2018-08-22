@@ -5,13 +5,14 @@
         %h3= t('pages.popular')
         .row.c-popular__posts
           - posts.each do |post|
-            .col-md-6
-              %a.c-popular__post{ href: post_path(post) }
-                .c-popular__thumb
-                  = image_tag post.thumbnail.url(:medium_thumb)
-                %h5= post.title
-                .c-popular__meta
-                  = l post.created_at, format: Post::FULL_DATE
+            = cache post.updated_at do
+              .col-md-6
+                %a.c-popular__post{ href: post_path(post) }
+                  .c-popular__thumb
+                    = image_tag post.thumbnail.url(:medium_thumb)
+                  %h5= post.title
+                  .c-popular__meta
+                    = l post.created_at, format: Post::FULL_DATE
       .col-md-4
         .c-popular__about
           %h3= t('pages.about_us')
@@ -28,6 +29,7 @@
       %h3= t('pages.tags')
       .c-tags__clound
         - Post.tag_counts_on(:tags).order(taggings_count: :desc).last(20).each do |tag|
-          %a{ href: posts_path(tag: tag.to_s) }
-            = tag
-            %span= tag.taggings_count
+          = cache tag.taggings_count do
+            %a{ href: posts_path(tag: tag.to_s) }
+              = tag
+              %span= tag.taggings_count
