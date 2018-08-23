@@ -36,9 +36,9 @@
               %a.nav-link{ href: admin_dashboard_path, class: "#{'active' if controller_name == 'dashboards'}" }
                 Dashboard
             %li.nav-item
-              %a.nav-link{ href: admin_posts_path, class: "#{'active' if controller_name == 'posts'}" } Posts
+              %a.nav-link{ href: admin_posts_path, class: "#{'active' if controller_name == 'posts'}" } Статьи
           %ul.nav.nav-pills.flex-column
             %li.nav-item
-              %a.nav-link{:href => "#"} Nav item
+              %a.nav-link{ href: admin_contacts_path, class: "#{'active' if controller_name == 'contacts'}" } Обратная связь
         .col-md-10
           = yield

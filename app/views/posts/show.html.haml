@@ -23,4 +23,4 @@
         = link_to @post.next_post, @post.next_post, class: 'link' if @post.next_post
     .c-content__actions
       - @post.tags.each do |tag|
-        = link_to tag.name, posts_path(tag: tag.name), class: 'tag'
+        = link_to "##{tag.name}", posts_path(tag: tag.name), class: 'tag'
