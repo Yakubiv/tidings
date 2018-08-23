@@ -5,6 +5,6 @@ SitemapGenerator::Sitemap.create do
   add posts_path, priority: 0.7, changefreq: 'daily'
 
   Post.find_each do |post|
-    add post_path(post.url_alies)
+    add post_path(post.slug)
   end
 end

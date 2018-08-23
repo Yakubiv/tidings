@@ -3,6 +3,7 @@
     = t('pages.contacts')
 
 %article.c-content--narrow
+  = render 'layouts/alerts'
   .box.c-contacts
     .c-contacts-map
       %iframe{ allowfullscreen: "true", frameborder: "0", height: "450", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyAHseJntomys2tuxhNQuadG8H5_lMW7OLc\r\n&q=Heroiv+UPA+Str+Lviv+UKraine", style: "border:0", width: '100%' }

@@ -4,25 +4,26 @@
       .col-md-8
         %h3= t('pages.popular')
         .row.c-popular__posts
-          - posts.each do |post|
-            = cache post.updated_at do
-              .col-md-6
-                %a.c-popular__post{ href: post_path(post) }
-                  .c-popular__thumb
-                    = image_tag post.thumbnail.url(:medium_thumb)
-                  %h5= post.title
-                  .c-popular__meta
-                    = l post.created_at, format: Post::FULL_DATE
+          = cache posts do
+            - posts.each do |post|
+              = cache post do
+                .col-md-6
+                  %a.c-popular__post{ href: post_path(post) }
+                    .c-popular__thumb
+                      = image_tag post.thumbnail.url(:medium_thumb)
+                    %h5= post.title
+                    .c-popular__meta
+                      = l post.created_at, format: Post::FULL_DATE
       .col-md-4
         .c-popular__about
           %h3= t('pages.about_us')
           %p
           %ul.c-popular__about-social
             %li
-              %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank' }
+              %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank', rel: 'nofollow' }
                 %i.fa.fa-facebook
             %li
-              %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank' }
+              %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank', rel: 'nofollow' }
                 %i.fa.fa-instagram
   .c-popular__box.c-tags__wrap
     .col-full.c-tags

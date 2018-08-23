@@ -6,10 +6,10 @@
           = image_tag 'into-logo.png'
       %ul.header__social
         %li
-          %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank' }
+          %a{ href: 'https://www.facebook.com/I-n-t-o-n-a-c-i-a-2115187908803300/', target: '_blank', rel: 'nofollow'  }
             %i.fa.fa-facebook
         %li
-          %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank' }
+          %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank', rel: 'nofollow' }
             %i.fa.fa-instagram
       .header__search
         -# Search
@@ -23,6 +23,6 @@
 
             .dropdown-menu
               - Post.categories.each_pair do |key, value|
-                %a.dropdown-item{ href: posts_path(category: key), class: active_if?(category: key) }= Post.human_enum_name(:category, key.to_sym)
+                %a.dropdown-item{ href: "/posts/c/#{key}", class: active_if?(category: key) }= Post.human_enum_name(:category, key.to_sym)
         %li{ class: active_if?(controller: 'contacts') }
           %a{ href: contacts_path }= t('pages.contacts')

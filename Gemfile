@@ -20,6 +20,8 @@ gem 'acts-as-taggable-on'
 gem 'rack-cors', require: 'rack/cors'
 gem 'dalli'
 gem 'redis-store'
+gem 'friendly_id', '~> 5.2.0'
+gem 'babosa'
 
 # Editor
 gem 'jquery-rails'

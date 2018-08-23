@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:tags).find_by(url_alies: params[:id])
+    @post = Post.includes(:tags).friendly.find(params[:id])
   end
 
   private

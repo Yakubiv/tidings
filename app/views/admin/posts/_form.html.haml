@@ -30,9 +30,6 @@
         = f.label :back_post_id
         = f.select :back_post_id, options_for_select(Post.to_select(f.object), f.object.back_post_id), { include_blank: 'Nothing' }, class: 'form-control'
       .form-group
-        = f.label :url_alies
-        = f.text_field :url_alies, class: 'form-control'
-      .form-group
         = f.label :tags
         = f.autocomplete_field :tag_list, autocomplete_tag_name_admin_posts_path, value: f.object.tag_list.to_s, |
                                           multiple: true, 'data-delimiter' => ', ', class: 'form-control', |

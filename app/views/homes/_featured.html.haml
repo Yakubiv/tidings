@@ -2,7 +2,7 @@
   .entry{ style: "background-image: url(#{post.thumbnail.url(:big_thumb)})" }
     .entry__content
       %span.entry__category
-        %a{ href: posts_path }= post.show_category
+        %a{ href: "/posts/c/#{post.category}" }= post.show_category
       %h1
         %a{ href: post_path(post) }
           = post.title

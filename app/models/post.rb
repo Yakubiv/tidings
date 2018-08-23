@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   FULL_DATE = '%B %d, %Y'
   mount_uploader :thumbnail, ThumbnailUploader
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   acts_as_taggable_on :tags
 
@@ -23,21 +25,17 @@ class Post < ApplicationRecord
     Post.published.where.not(query).map { |p| [p.title, p.id] }
   end
 
-  def to_param
-    url_alies
-  end
-
   def to_meta_tags
     { title: title,
       description: description,
       keywords: meta_tags.join(', ') }
   end
 
-  def show_category
-    Post.human_enum_name(:category, category)
+  def normalize_friendly_id(input)
+    input.to_slug.normalize(transliterations: :russian).to_s
   end
 
-  def self.find(input)
-    find_by(url_alies: input)
+  def show_category
+    Post.human_enum_name(:category, category)
   end
 end

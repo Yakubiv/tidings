@@ -16,7 +16,7 @@
             - if post.thumbnail.url
               = image_tag post.thumbnail_url(:thumb)
           %td= post.title
-          %td= post.url_alies
+          %td= post.slug
           %td
             = link_to edit_admin_post_path(post) do
               %i.fa.fa-pencil

@@ -36,11 +36,11 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :url_alies, :category,
+    params.require(:post).permit(:title, :description, :category,
                                  :status, :big_featured, :next_post_id, :back_post_id,
                                  :featured, :popular,
                                  :content, :thumbnail, tag_list: []).merge(meta_tags: meta_tags)
