@@ -1,12 +1,16 @@
-%h3 Posts
+%h3
+  Статьи
+  .pull-right
+    = link_to 'Новая новость', new_admin_post_path, class: 'btn btn-secondary u-m-b-10'
+
 
 .table-responsive
   %table.table.table-striped
     %thead
       %tr
         %th
-        %th Title
-        %th URL
+        %th Названия
+        %th Ссилка
         %th
 
     %tbody
@@ -22,7 +26,3 @@
               %i.fa.fa-pencil
             = link_to [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } do
               %i.fa.fa-trash
-
-%br
-
-= link_to 'New Post', new_admin_post_path, class: 'btn btn-secondary'

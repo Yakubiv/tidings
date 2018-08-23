@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :posts do
         get :autocomplete_tag_name, on: :collection
       end
+      resources :contacts, only: %i[index]
       resource :dashboard, only: :show
     end
   end

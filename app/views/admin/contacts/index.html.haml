@@ -1,0 +1,17 @@
+%h3
+  Обратная связь
+
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Имя
+        %th Мейл
+        %th Контент
+
+    %tbody
+      - @contacts.each do |contact|
+        %tr
+          %td= contact.name
+          %td= mail_to contact.email
+          %td= contact.content
