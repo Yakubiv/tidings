@@ -5,7 +5,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:tags).friendly.find(params[:id])
+    if post = Post.find_by(url_alies: params[:id])
+      redirect_to post_path(post)
+    else
+      @post = Post.includes(:tags).friendly.find(params[:id])
+    end
   end
 
   private
