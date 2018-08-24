@@ -68,7 +68,7 @@ body.home {
     margin: 0 auto;
 
     @media screen and (max-width: $md) {
-      width: 95%;
+      width: 100%;
     }
   }
 
@@ -103,16 +103,13 @@ body.home {
       font-weight: 400;
       font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
 
+      @media screen and (max-width: $md) {
+        margin-top: 1.5rem;
+        padding: 0 10px;
+      }
+
       img {
         width: 100%;
-      }
-
-      @media screen and (max-width: $lg) {
-        padding: 0;
-      }
-
-      @media screen and (max-width: $md) {
-        padding: 0;
       }
     }
 
@@ -124,6 +121,10 @@ body.home {
       line-height: 1.58;
       letter-spacing: -.003em;
       font-weight: 400;
+
+      @media screen and (max-width: $md) {
+        padding: 0 10px;
+      }
 
       a.link {
         display: block;
@@ -153,11 +154,6 @@ body.home {
           text-decoration: underline;
         }
       }
-
-
-      @media screen and (max-width: $md) {
-        padding: 0;
-      }
     }
 
     &__header {
@@ -165,7 +161,7 @@ body.home {
       text-align: center;
 
       @media screen and (max-width: $md) {
-        padding: 0;
+        padding: 0 10px;
       }
 
       &-title {
