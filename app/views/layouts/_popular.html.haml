@@ -30,7 +30,6 @@
       %h3= t('pages.tags')
       .c-tags__clound
         - Post.tag_counts_on(:tags).order(taggings_count: :desc).last(20).each do |tag|
-          = cache [tag.name, tag.taggings_count] do
-            %a{ href: posts_path(tag: tag.to_s) }
-              = tag
-              %span= tag.taggings_count
+          %a{ href: posts_path(tag: tag.to_s) }
+            = tag
+            %span= tag.taggings_count
