@@ -24,3 +24,5 @@
     .c-content__actions
       - @post.tags.each do |tag|
         = link_to "##{tag.name}", posts_path(tag: tag.name), class: 'tag'
+
+    = render 'disqus', post: @post
