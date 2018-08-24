@@ -10,7 +10,8 @@
       %tr
         %th
         %th Названия
-        %th Ссилка
+        %th Статус
+        %th Категорія
         %th
 
     %tbody
@@ -20,7 +21,8 @@
             - if post.thumbnail.url
               = image_tag post.thumbnail_url(:thumb)
           %td= post.title
-          %td= post.slug
+          %td= post.show(:status)
+          %td= post.show(:category)
           %td
             = link_to edit_admin_post_path(post) do
               %i.fa.fa-pencil

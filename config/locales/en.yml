@@ -5,9 +5,28 @@ en:
         name: Имя
         email: Почта
         content: Сообщение
+      post:
+        title: Назва
+        description: Опис
+        category: Категорія
+        status: Статус
+        big_featured: Встановити як Велика іконка головної
+        next_post_id: Лінкування на пост 1
+        back_post_id: Лінкування на пост 2
+        featured: Зробити малою іконкою головної
+        popular: Популяне?
+        content: Контент
+        thumbnail: Основна Іконка статті
+        tag: Внутрішні Теги
+        meta_tags: Мета теги
+
   activerecord:
     attributes:
       post:
+        statuses:
+          published: Опубліковано
+          draft: Чернетка
+
         categories:
           interesting: Интересное
           culture: Культура

@@ -10,7 +10,7 @@
         |
         %li.category
           %a{ href: posts_path }
-            = @post.show_category
+            = @post.show(:category)
     .c-content__media.col-full
       .c-content__thumb
         = image_tag @post.thumbnail.url(:big_thumb), width: "100%"

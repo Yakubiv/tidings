@@ -35,6 +35,11 @@ class Post < ApplicationRecord
     input.to_slug.normalize(transliterations: :russian).to_s
   end
 
+  def show(type)
+    { category: Post.human_enum_name(:categories, category),
+      status: Post.human_enum_name(:statuses, status) }[type]
+  end
+
   def show_category
     Post.human_enum_name(:category, category)
   end

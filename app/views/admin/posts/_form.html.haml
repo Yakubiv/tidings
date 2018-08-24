@@ -37,21 +37,20 @@
       .form-group
         = f.label :meta_tags
         = text_field_tag :meta_tags, f.object.meta_tags.join(', '), class: 'form-control'
-    .col-sm-6
       .form-group
         = f.label :category
-        = f.select :category, options_for_select(Post.categories.select, f.object.category), {}, class: 'form-control'
+        = f.select :category, options_for_select(Post.categories.map { |category, key|  [Post.human_enum_name(:categories, category.to_sym), category] }, f.object.category), {}, class: 'form-control'
       .form-group
         = f.label :status
-        = f.select :status, options_for_select(Post.statuses.select, f.object.status), {}, class: 'form-control'
+        = f.select :status, options_for_select(Post.statuses.map { |status, key|  [Post.human_enum_name(:statuses, status.to_sym), status] }, f.object.status), {}, class: 'form-control'
       .form-group
-        = f.label :big_featured
         = f.check_box :big_featured
+        = f.label :big_featured
       .form-group
-        = f.label :featured
         = f.check_box :featured
+        = f.label :featured
       .form-group
-        = f.label :popular
         = f.check_box :popular
+        = f.label :popular
   .form-group
     = f.submit 'Save', class: 'btn btn-success'
