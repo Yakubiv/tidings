@@ -25,6 +25,13 @@ class Post < ApplicationRecord
     Post.published.where.not(query).map { |p| [p.title, p.id] }
   end
 
+  def og_properties
+    { title: title,
+      type: show(:category),
+      image: thumbnail.url(:medium_thumb),
+      url: "http://www.intonacia.com/posts/#{slug}" }
+  end
+
   def to_meta_tags
     { title: title,
       description: description,

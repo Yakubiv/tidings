@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def meta_og_tags(properties = {})
+    return unless properties.is_a? Hash
+
+    properties.map do |property, value|
+      tag(:meta, property: "og:#{property}", content: value)
+    end.join.html_safe
+  end
+
   def active_if?(conditions)
     active_conditions = {
       action: action_name == conditions[:action],

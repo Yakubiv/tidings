@@ -1,4 +1,6 @@
 - set_meta_tags @post
+= content_for(:og_propeties) do
+  = meta_og_tags @post.og_properties
 
 %article.c-content--narrow
   .box.format-article
