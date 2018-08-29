@@ -18,7 +18,7 @@
         = image_tag @post.thumbnail.url(:big_thumb), width: "100%"
     .c-content__main
       = raw @post.content
-      .fb-share-button{ data: { href:"https://www.your-domain.com/your-page.html", layout: "button_count" } }
+      .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
 
     - if @post.back_post
       .c-content__actions
