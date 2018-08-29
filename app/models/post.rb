@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  FULL_DATE = '%B %d, %Y'
+  FULL_DATE = '%d %B, %Y'
   mount_uploader :thumbnail, ThumbnailUploader
   extend FriendlyId
   friendly_id :title, use: :slugged
