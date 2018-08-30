@@ -25,7 +25,7 @@ class Post < ApplicationRecord
     Post.published.where.not(query).map { |p| [p.title, p.id] }
   end
 
-  def to_meta_tags
+  def meta_tags
     { title: title,
       description: description,
       keywords: meta_tags.join(', ') }
