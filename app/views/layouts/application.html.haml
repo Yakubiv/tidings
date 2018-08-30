@@ -1,7 +1,6 @@
 !!!
 %html
   %head
-    = display_meta_tags site: t('brand.name')
     = render 'layouts/ga' if Rails.env.production?
     = yield(:og_propeties)
     = render 'layouts/head'
