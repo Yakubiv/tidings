@@ -97,14 +97,15 @@ body.home {
       margin-top: 3rem;
       padding-left: 6rem;
       padding-right: 6rem;
-      font-size: 21px;
+      font-size: 18px;
       line-height: 1.58;
       letter-spacing: -.003em;
       font-weight: 400;
-      font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
 
       img {
         width: 100%;
+        display: block;
+        margin: 25px auto;
       }
 
       @media screen and (max-width: $lg) {
