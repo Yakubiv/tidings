@@ -25,10 +25,10 @@
     .col-sm-6
       .form-group
         = f.label :next_post_id
-        = f.select :next_post_id, options_for_select(Post.to_select(f.object), f.object.next_post_id), { include_blank: 'Nothing' }, class: 'form-control'
+        = f.text_field :next_post, data: { autocomplete_source: api_posts_path }, class: 'form-control'
       .form-group
         = f.label :back_post_id
-        = f.select :back_post_id, options_for_select(Post.to_select(f.object), f.object.back_post_id), { include_blank: 'Nothing' }, class: 'form-control'
+        = f.text_field :back_post, data: { autocomplete_source: api_posts_path }, class: 'form-control'
       .form-group
         = f.label :tags
         = f.autocomplete_field :tag_list, autocomplete_tag_name_admin_posts_path, value: f.object.tag_list.to_s, |
@@ -36,7 +36,7 @@
                                           'data-auto-focus' => true
       .form-group
         = f.label :meta_tags
-        = text_field_tag :meta_tags, f.object.meta_tags.join(', '), class: 'form-control'
+        = text_field_tag :meta_tags, f.object.meta_tags.join(','), class: 'form-control'
       .form-group
         = f.label :category
         = f.select :category, options_for_select(Post.categories.map { |category, key|  [Post.human_enum_name(:categories, category.to_sym), category] }, f.object.category), {}, class: 'form-control'

@@ -20,9 +20,12 @@ class Post < ApplicationRecord
     title
   end
 
-  def self.to_select(post)
-    query = post.persisted? ? { id: post.id } : {}
-    Post.published.where.not(query).map { |p| [p.title, p.id] }
+  def next_post=(title)
+    self.next_post = Post.find_by(title: title) if title.present?
+  end
+
+  def back_post=(title)
+    self.back_post = Post.find_by(title: title) if title.present?
   end
 
   def og_properties

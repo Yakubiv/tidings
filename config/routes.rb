@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resource :about, only: :show
   resources :contacts, only: %i[index create]
   resources :subscriptions, only: :create
+  namespace :api do
+    resources :posts, only: :index
+  end
 
   constraints Subdomain do
     namespace :admin do
