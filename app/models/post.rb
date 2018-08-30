@@ -32,7 +32,7 @@ class Post < ApplicationRecord
       url: "http://www.intonacia.com/posts/#{slug}" }
   end
 
-  def meta_tags
+  def to_meta_tags
     { title: title,
       description: description,
       keywords: meta_tags.join(', ') }

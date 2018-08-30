@@ -1,11 +1,10 @@
 !!!
 %html
   %head
-    %title= t('brand.name')
+    = display_meta_tags site: t('brand.name')
     = render 'layouts/ga' if Rails.env.production?
     = yield(:og_propeties)
-    = cache 'head' do
-      = render 'layouts/head'
+    = render 'layouts/head'
   %body.main
     = render 'layouts/fb_code'
     %section.c-pageheader
