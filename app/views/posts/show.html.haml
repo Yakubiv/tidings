@@ -1,5 +1,8 @@
 - set_meta_tags @post.meta_tags
 
+= content_for(:og_propeties) do
+  = meta_og_tags @post.og_properties
+
 %article.c-content--narrow
   .box.format-article
     .c-content__header.col-full
@@ -16,6 +19,8 @@
         = image_tag @post.thumbnail.url(:big_thumb), width: "100%"
     .c-content__main
       = raw @post.content
+      .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
+
     - if @post.back_post
       .c-content__actions
         = t('posts.read_more')

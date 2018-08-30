@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  FULL_DATE = '%B %d, %Y'
+  FULL_DATE = '%d %B, %Y'
   mount_uploader :thumbnail, ThumbnailUploader
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -23,6 +23,13 @@ class Post < ApplicationRecord
   def self.to_select(post)
     query = post.persisted? ? { id: post.id } : {}
     Post.published.where.not(query).map { |p| [p.title, p.id] }
+  end
+
+  def og_properties
+    { title: title,
+      type: show(:category),
+      image: thumbnail.url(:medium_thumb),
+      url: "http://www.intonacia.com/posts/#{slug}" }
   end
 
   def meta_tags
