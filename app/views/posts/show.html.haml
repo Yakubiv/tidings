@@ -16,7 +16,7 @@
             = @post.show(:category)
     .c-content__media.col-full
       .c-content__thumb
-        = image_tag @post.thumbnail.url(:big_thumb), width: "100%"
+        = image_tag @post.thumbnail.url, width: "100%"
     .c-content__main
       = raw @post.content
       .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
