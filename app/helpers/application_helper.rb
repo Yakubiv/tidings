@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def meta_tags_defaults
+    { site: t('brand.name'),
+      description: "intonacia.com - Сайт со статьями и интересными фактами. О новостях в мире, культуре, музыке. О важных событиях и мероприятиях 2018.",
+      keywords: "Новости, новости в украине, новости в мире, сегодня новости, новости культури, новости музики, интонация, intonacia, інтонація, блог" }
+  end
+  
   def meta_og_tags(properties = {})
     return unless properties.is_a? Hash
 
