@@ -21,11 +21,11 @@ class Post < ApplicationRecord
   end
 
   def next_post=(title)
-    self.next_post = Post.find_by(title: title) if title.present?
+    self.next_post_id = Post.find_by(title: title).id if title.present?
   end
 
   def back_post=(title)
-    self.back_post = Post.find_by(title: title) if title.present?
+    self.back_post_id = Post.find_by(title: title).id if title.present?
   end
 
   def og_properties
