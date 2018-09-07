@@ -30,7 +30,6 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'meta-tags'
-gem 'sitemap_generator'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # auth

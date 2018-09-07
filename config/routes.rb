@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'homes#index'
 
+  get '/sitemap.xml' => 'sitemaps#index', defaults: { format: 'xml' }
+
   resources :posts, only: %i[index show] do
     get 'c/:category', action: :index, on: :collection
   end
+
   resource :about, only: :show
   resources :contacts, only: %i[index create]
   resources :subscriptions, only: :create
