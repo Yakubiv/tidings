@@ -56,6 +56,10 @@ class Post < ApplicationRecord
     Post.human_enum_name(:category, category)
   end
 
+  def publish_at
+    self[:publish_at].strftime('%Y-%m-%d %H:%M')
+  end
+
   private
 
   def schedule_publication
