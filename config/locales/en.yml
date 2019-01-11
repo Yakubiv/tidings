@@ -18,7 +18,9 @@ en:
         content: Контент
         thumbnail: Основна Іконка статті
         tag: Внутрішні Теги
-        meta_tags: Мета теги
+        meta_tags: Мета теги (СЕО)
+        tags: Теги на сайті
+        thumbnail: Картинка новинки
 
   activerecord:
     attributes:
