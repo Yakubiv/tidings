@@ -665,7 +665,7 @@ body.home {
   &__post {
     display: block;
     position: relative;
-    padding-left: 8.5rem;
+    padding-left: 6rem;
     margin-bottom: 2.0rem;
     min-height: 5.4rem;
   }
@@ -685,12 +685,11 @@ body.home {
 
   &__thumb {
     position: absolute;
+    width: 80px;
+    height: 80px;
     top: .3rem;
     left: 0;
-
-    img {
-      height: 4.2rem;
-    }
+    background-size: cover;
   }
 }
 

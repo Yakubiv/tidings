@@ -9,8 +9,7 @@
               = cache post do
                 .col-md-6
                   %a.c-popular__post{ href: post_path(post) }
-                    .c-popular__thumb
-                      = image_tag post.thumbnail.url(:medium_thumb)
+                    .c-popular__thumb{ style: "background-image: url(#{post.thumbnail.url(:medium_thumb)})" }
                     %h5= post.title
                     .c-popular__meta
                       = l post.created_at, format: Post::FULL_DATE
