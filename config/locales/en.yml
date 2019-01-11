@@ -21,6 +21,7 @@ en:
         meta_tags: Мета теги (СЕО)
         tags: Теги на сайті
         thumbnail: Картинка новинки
+        publish_at: Публікувати новинку пізніше
 
   activerecord:
     attributes:

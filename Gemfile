@@ -22,6 +22,8 @@ gem 'dalli'
 gem 'redis-store'
 gem 'friendly_id', '~> 5.2.0'
 gem 'babosa'
+gem 'sidekiq'
+gem 'redis-rails'
 
 # Editor
 gem 'jquery-rails'

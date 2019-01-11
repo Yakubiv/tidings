@@ -12,6 +12,7 @@ module Tidings
     config.load_defaults 5.2
     config.autoload_paths += %W[ lib/ ]
     config.middleware.use Rack::Deflater
+    config.active_job.queue_adapter = :sidekiq
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do

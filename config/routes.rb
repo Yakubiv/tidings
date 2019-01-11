@@ -1,4 +1,7 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   root 'homes#index'
