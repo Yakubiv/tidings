@@ -58,6 +58,9 @@
         = f.select :status, options_for_select(Post.statuses.map { |status, key|  [Post.human_enum_name(:statuses, status.to_sym), status] }, f.object.status), {}, class: 'form-control'
       .form-group
         = f.label :publish_at
-        = f.text_field :publish_at, placeholder: 'Вибрати час', class: 'form-control'
+        .input-group.date#datetimepicker
+          = f.text_field :publish_at, placeholder: 'Вибрати час', class: 'form-control'
+          %span.input-group-addon
+            %i.fa.fa-calendar
   .form-group
     = f.submit 'Save', class: 'btn btn-success'

@@ -14,6 +14,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
+  before_save :schedule_publication
+
   default_scope { order(created_at: :desc) }
 
   def to_s
@@ -52,5 +54,13 @@ class Post < ApplicationRecord
 
   def show_category
     Post.human_enum_name(:category, category)
+  end
+
+  private
+
+  def schedule_publication
+    return false if publish_at.nil?
+
+    PublishPostJob.set(wait_until: publish_at).perform_later(id)
   end
 end
