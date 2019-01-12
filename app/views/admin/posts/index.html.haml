@@ -21,7 +21,11 @@
             - if post.thumbnail.url
               = image_tag post.thumbnail_url(:thumb)
           %td= post.title
-          %td= post.show(:status)
+          %td
+            - if post.publish_at && post.publish_at > Time.current
+              %p Опублікується #{post.publish_at.strftime(Post::FULL_DATE)}
+            - else
+              = post.show(:status)
           %td= post.show(:category)
           %td
             = link_to edit_admin_post_path(post) do

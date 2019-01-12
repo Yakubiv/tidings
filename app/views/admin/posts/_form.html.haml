@@ -6,13 +6,19 @@
         - @post.errors.full_messages.each do |message|
           %li= message
   .row
-    .col-sm-10
+    .col-sm-9
       .form-group
         = f.label :title
         = f.text_field :title, class: 'form-control'
       .form-group
         = f.label :description
         = f.text_area :description, class: 'form-control'
+      .form-group
+        = f.label :thumbnail
+        = f.file_field :thumbnail
+        = f.hidden_field :thumbnail_cache
+        - if f.object.thumbnail.url
+          = image_tag f.object.thumbnail.url(:medium_thumb)
       .form-group
         = f.cktext_area :content
 
@@ -33,14 +39,7 @@
             = f.label :meta_tags
             = text_field_tag :meta_tags, f.object.meta_tags.join(','), class: 'form-control'
 
-    .col-sm-2
-      .form-group
-        = f.label :thumbnail
-        = f.file_field :thumbnail
-        = f.hidden_field :thumbnail_cache
-        - if f.object.thumbnail.url
-          .image-preview
-            = image_tag f.object.thumbnail.url(:medium_thumb)
+    .col-sm-3
       .form-group
         = f.check_box :big_featured
         = f.label :big_featured
@@ -59,7 +58,7 @@
       .form-group
         = f.label :publish_at
         .input-group.date#datetimepicker
-          = f.text_field :publish_at, placeholder: 'Вибрати час', class: 'form-control'
+          = f.text_field :publish_at, placeholder: 'Вибрати час', value: f.object.publish_at&.strftime('%Y-%m-%d %H:%M'), class: 'form-control'
           %span.input-group-addon
             %i.fa.fa-calendar
   .form-group

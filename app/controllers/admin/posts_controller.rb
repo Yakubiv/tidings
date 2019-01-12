@@ -14,9 +14,11 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def create
-    @post = Post.create(post_params)
-
-    redirect_to %i[admin posts], notice: 'Post was successfully created.'
+    if @post = Post.create(post_params)
+      redirect_to %i[admin posts], notice: 'Post was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update

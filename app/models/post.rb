@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  FULL_DATE = '%d %B, %Y'
+  FULL_DATE = '%d %B, %Y %H:%M'
   mount_uploader :thumbnail, ThumbnailUploader
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -14,7 +14,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
-  before_save :schedule_publication
+  after_save :schedule_publication
 
   default_scope { order(created_at: :desc) }
 
@@ -56,14 +56,11 @@ class Post < ApplicationRecord
     Post.human_enum_name(:category, category)
   end
 
-  def publish_at
-    self[:publish_at].strftime('%Y-%m-%d %H:%M')
-  end
-
   private
 
   def schedule_publication
     return false if publish_at.nil?
+    return false if publish_at < Date.current
 
     PublishPostJob.set(wait_until: publish_at).perform_later(id)
   end

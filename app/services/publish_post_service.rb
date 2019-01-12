@@ -5,7 +5,7 @@ class PublishPostService
 
   attr_reader :post
 
-  def initiliaze(post_id)
+  def initialize(post_id)
     @post = Post.find(post_id)
   end
 

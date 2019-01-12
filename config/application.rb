@@ -13,6 +13,7 @@ module Tidings
     config.autoload_paths += %W[ lib/ ]
     config.middleware.use Rack::Deflater
     config.active_job.queue_adapter = :sidekiq
+    config.time_zone = 'Europe/Kiev'
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
