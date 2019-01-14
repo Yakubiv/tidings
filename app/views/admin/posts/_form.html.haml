@@ -58,7 +58,7 @@
       .form-group
         = f.label :publish_at
         .input-group.date#datetimepicker
-          = f.text_field :publish_at, placeholder: 'Вибрати час', value: f.object.publish_at&.strftime('%Y-%m-%d %H:%M'), class: 'form-control'
+          = f.text_field :publish_at, placeholder: 'Вибрати час', value: f.object&.publish_at&.strftime('%Y-%m-%d %H:%M'), class: 'form-control'
           %span.input-group-addon
             %i.fa.fa-calendar
   .form-group
