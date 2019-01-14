@@ -61,6 +61,8 @@ class Post < ApplicationRecord
   def schedule_publication
     return false if publish_at.nil?
     return false if publish_at < Date.current
+    return false if published?
+    return false if publish_at_was && publish_at_was == publish_at
 
     PublishPostJob.set(wait_until: publish_at).perform_later(id)
   end
