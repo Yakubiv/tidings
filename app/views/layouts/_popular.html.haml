@@ -13,6 +13,9 @@
                     %h5= post.title
                     .c-popular__meta
                       = l post.created_at, format: Post::FULL_DATE
+                      %span.u-m-l-10
+                        %i.fa.fa-eye
+                        = post.impressions_count
       .col-md-4
         .c-popular__about
           %h3= t('pages.about_us')

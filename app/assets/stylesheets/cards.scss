@@ -1,5 +1,4 @@
 .c-cards {
-  padding-top: 20px;
 }
 
 .c-card-box {
@@ -22,6 +21,12 @@
   min-height: 100%;
   position: relative;
   margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 0px rgba(212,212,212,1);
+
+  &:hover {
+    box-shadow: 6px 6px 10px 0px rgba(212,212,212,1);
+  }
 
   &__category {
     position: absolute;
@@ -56,14 +61,19 @@
       font-size: 12px;
       text-transform: uppercase;
     }
+
   }
   &__thumb {
     padding-bottom: 80%;
     background-size: cover;
     background-position: center center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     &:hover::before {
-      opacity: .2;
+      opacity: .4;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
 
     &:before {
@@ -78,30 +88,26 @@
       transition: all 0.4s ease-in-out;
       opacity: 0;
       background-color: #151515;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
   }
 
   &__content {
-    padding: 20px;
-    a { color: $brand-black; }
+    position: relative;
+    padding: 15px 15px 10px;
+
+    a { color: $brand-font; }
+  }
+
+  &__meta-data {
+    color: #b2b2b2;
+    font-size: 12px;
   }
 
   &__title {
-    font-size: 20px;
-    margin: 0;
-    color: #333;
-    margin-bottom: 15px;
-  }
+    font-size: 16px;
 
-  &__description {
-    flex: 1;
-    line-height: 1.4;
-  }
-
-  &__actions {
-    font-size: 14px;
-    font-weight: bold;
-    color: $brand-black;
-    margin: 2em 0 0 0;
+    margin-bottom: 10px;
   }
 }

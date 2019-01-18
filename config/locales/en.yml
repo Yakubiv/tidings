@@ -22,6 +22,7 @@ en:
         tags: Теги на сайті
         thumbnail: Картинка новинки
         publish_at: Публікувати новинку пізніше
+        top: Топова новинка?
 
   activerecord:
     attributes:
@@ -76,6 +77,9 @@ en:
     instagram: Инстаграм
     facebook: Фейсбук
     telegram: Телеграм
+
+    homes:
+      top_news: Свежие новости
 
   date:
     day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]

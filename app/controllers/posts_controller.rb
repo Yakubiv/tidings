@@ -5,11 +5,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    if post = Post.find_by(url_alies: params[:id])
-      redirect_to post_path(post)
-    else
-      @post = Post.includes(:tags).friendly.find(params[:id])
-    end
+    @post = Post.includes(:tags).friendly.find(params[:id])
+    impressionist(@post, unique: :session_hash)
+  rescue
+    post = Post.find_by(url_alies: params[:id])
+    redirect_to post_path(post)
   end
 
   private

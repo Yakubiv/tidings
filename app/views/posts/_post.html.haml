@@ -8,8 +8,7 @@
       .c-card__content
         %h1.c-card__title
           = link_to post.title, post
-        %p.c-card__description
-          = post.description
-        %span.c-card__actions
-          - tags = post.tags.map { |tag| link_to tag.name, posts_path(tag: tag.name) }
-          = tags.join(', ').html_safe
+        %span.c-card__meta-data
+          = l post.publish_at, format: Post::SHORT_DATE
+          %i.fa.fa-eye
+          = post.impressions_count

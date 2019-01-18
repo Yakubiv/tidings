@@ -74,7 +74,7 @@ body.home {
 
   &--narrow {
     .box {
-      max-width: 960px;
+      max-width: 90%;
     }
   }
 }
@@ -94,7 +94,7 @@ body.home {
       }
     }
     &__main {
-      margin-top: 3rem;
+      margin-top: 2rem;
       font-size: 18px;
       line-height: 1.58;
       letter-spacing: -.003em;
@@ -158,8 +158,9 @@ body.home {
     }
 
     &__header {
-      padding: 0 8rem;
-      text-align: center;
+      padding: 0;
+      text-align: left;
+      border-bottom: 1px solid $border-grey;
 
       @media screen and (max-width: $md) {
         padding: 0;
@@ -187,7 +188,7 @@ body.home {
         position: relative;
         padding: 0;
 
-        a { color: $brand-black; }
+        a { color: $brand-font; }
 
         .fa {
           font-size: 10px;
@@ -559,12 +560,12 @@ body.home {
 
     &:focus {
       color: $brand-white;
-      background-color: $brand-black;
+      background-color: $brand-font;
     }
 
     &.active {
       color: $brand-white;
-      background-color: $brand-black;
+      background-color: $brand-font;
     }
   }
 

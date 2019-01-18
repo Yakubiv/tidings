@@ -1,9 +1,13 @@
 class Post < ApplicationRecord
   FULL_DATE = '%d %B, %Y %H:%M'
-  mount_uploader :thumbnail, ThumbnailUploader
+  SHORT_DATE = '%d %B, %H:%M'
+  DATE = '%d %B'
+  TIME = '%H:%M'
   extend FriendlyId
+  mount_uploader :thumbnail, ThumbnailUploader
   friendly_id :title, use: :slugged
 
+  is_impressionable counter_cache: true, unique: true
   acts_as_taggable_on :tags
 
   enum category: { interesting: 1, culture: 2, news: 3, buity: 4, important: 5, art: 6, other: 7, style: 8, trands: 9 }
@@ -15,6 +19,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
 
   after_save :schedule_publication
+  before_save :set_publish_at
 
   default_scope { order(created_at: :desc) }
 
@@ -57,6 +62,10 @@ class Post < ApplicationRecord
   end
 
   private
+
+  def set_publish_at
+    self.publish_at = Time.current unless publish_at
+  end
 
   def schedule_publication
     return false if publish_at.nil?

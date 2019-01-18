@@ -50,6 +50,9 @@
         = f.check_box :popular
         = f.label :popular
       .form-group
+        = f.check_box :top
+        = f.label :top
+      .form-group
         = f.label :category
         = f.select :category, options_for_select(Post.categories.map { |category, key|  [Post.human_enum_name(:categories, category.to_sym), category] }, f.object.category), {}, class: 'form-control'
       .form-group

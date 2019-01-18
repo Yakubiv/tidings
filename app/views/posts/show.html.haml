@@ -3,28 +3,39 @@
 = content_for(:og_propeties) do
   = meta_og_tags @post.og_properties
 
-%article.c-content--narrow
-  .box.format-article
-    .c-content__header.col-full
-      %h1.c-content__header-title
-        = @post.title
-      %ul.c-content__header-meta
-        %li.date= l @post.created_at, format: Post::FULL_DATE
-        |
-        %li.category
-          %a{ href: posts_path }
-            = @post.show(:category)
-    .c-content__media.col-full
-    .c-content__main
-      = raw @post.content
-      .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
+.row
+  .col-md-9
+    %article.c-content--narrow
+      .format-article
+        .c-content__header.col-full
+          %h1.c-content__header-title
+            = @post.title
+          %ul.c-content__header-meta
+            %li.date= l @post.created_at, format: Post::FULL_DATE
+            |
+            %li.category
+              %a{ href: posts_path }
+                = @post.show(:category)
+            |
+            %li
+              %span
+                %i.fa.fa-eye{ style: 'font-size: 15px;' }
+                = @post.impressions_count
 
-    .c-content__actions
-      = t('posts.read_more') if @post.back_post || @post.next_post
-      = link_to @post.back_post, @post.back_post, class: 'link' if @post.back_post
-      = link_to @post.next_post, @post.next_post, class: 'link' if @post.next_post
-    .c-content__actions
-      - @post.tags.each do |tag|
-        = link_to "##{tag.name}", posts_path(tag: tag.name), class: 'tag'
+        .c-content__media.col-full
+        .c-content__main
+          = raw @post.content
+          %hr
+          .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
 
-    = render 'disqus', post: @post
+        .c-content__actions
+          = t('posts.read_more') if @post.back_post || @post.next_post
+          = link_to @post.back_post, @post.back_post, class: 'link' if @post.back_post
+          = link_to @post.next_post, @post.next_post, class: 'link' if @post.next_post
+        .c-content__actions
+          - @post.tags.each do |tag|
+            = link_to "##{tag.name}", posts_path(tag: tag.name), class: 'tag'
+
+        = render 'disqus', post: @post
+  .col-md-3
+    = render 'layouts/top_news', posts: Post.where(status: :published).last(15)

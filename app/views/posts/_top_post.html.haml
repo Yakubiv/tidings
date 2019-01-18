@@ -1,0 +1,9 @@
+= cache post do
+  %li.c-top-news__post
+    = link_to post do
+      .c-top-news__post--time
+        = l post.publish_at, format: Post::DATE
+        %br
+        = post.publish_at.strftime(Post::TIME)
+
+      .c-top-news__post--title= post.title

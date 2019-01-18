@@ -24,6 +24,7 @@ gem 'friendly_id', '~> 5.2.0'
 gem 'babosa'
 gem 'sidekiq'
 gem 'redis-rails'
+gem 'impressionist'
 
 # Editor
 gem 'jquery-rails'
