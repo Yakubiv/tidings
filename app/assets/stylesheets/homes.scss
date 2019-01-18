@@ -36,9 +36,12 @@ body.home {
   }
 
   &__header {
-    padding: 0 8rem;
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+
+    &.center {
+      padding: 0 8rem;
+      text-align: center;
+    }
 
     .fa {
       font-size: 30px;

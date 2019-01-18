@@ -28,10 +28,17 @@ ul.c-top-news__posts {
   border-bottom: 1px solid $brand-default;
   padding: 10px 0;
 
+  &:hover {
+    a {
+      color: #0275d8;
+    }
+  }
+
   a {
     display: block;
     overflow: hidden;
     color: #222;
+    transition: all 0.5s ease-in-out;
   }
 
   &--title {
