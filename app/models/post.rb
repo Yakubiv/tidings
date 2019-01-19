@@ -22,6 +22,8 @@ class Post < ApplicationRecord
   after_save :schedule_publication
   before_save :set_publish_at
 
+  scope :recent, -> { where(publish_at: 7.days.ago..Date.current) }
+
   default_scope { order(created_at: :desc) }
 
   def to_s

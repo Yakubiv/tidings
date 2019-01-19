@@ -15,8 +15,8 @@ class HomeFacade
     posts.where(popular: true).first(6)
   end
 
-  def top_posts
-    @top_posts ||= Post.includes(:tags).where(status: :published, top: true)
+  def recent_posts
+    @recent_posts ||= Post.includes(:tags).where(status: :published).recent
   end
 
   def posts

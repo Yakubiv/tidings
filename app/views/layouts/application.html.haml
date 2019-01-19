@@ -12,7 +12,7 @@
       .c-content--wrap
         .row
           .col-md-3
-            = render 'layouts/top_news', posts: Post.where(status: :published, top: true).last(15)
+            = render 'layouts/top_news', posts: Post.where(status: :published).recent.last(15)
           .col-md-9
             = yield
     = render 'layouts/popular', posts: Post.where(popular: true).first(6)
