@@ -16,7 +16,7 @@ class HomeFacade
   end
 
   def top_posts
-    @posts ||= Post.includes(:tags).where(status: :published, top: true)
+    @top_posts ||= Post.includes(:tags).where(status: :published, top: true)
   end
 
   def posts

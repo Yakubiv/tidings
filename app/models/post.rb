@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
-  FULL_DATE = '%d %B, %Y %H:%M'
-  SHORT_DATE = '%d %B, %H:%M'
-  DATE = '%d %B'
-  TIME = '%H:%M'
+  FULL_DATE = '%d %B, %Y %H:%M'.freeze
+  SHORT_DATE = '%d %B, %H:%M'.freeze
+  DATE = '%d/%m'.freeze
+  TIME = '%H:%M'.freeze
+
   extend FriendlyId
   mount_uploader :thumbnail, ThumbnailUploader
   friendly_id :title, use: :slugged

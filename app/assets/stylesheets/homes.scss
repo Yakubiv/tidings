@@ -66,18 +66,14 @@ body.home {
   }
 
   &--wrap {
-    width: 90%;
+    width: 95%;
     overflow: hidden;
     margin: 0 auto;
-
-    @media screen and (max-width: $md) {
-      width: 95%;
-    }
   }
 
   &--narrow {
     .box {
-      max-width: 90%;
+      max-width: 95%;
     }
   }
 }
