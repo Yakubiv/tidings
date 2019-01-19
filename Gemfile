@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'fog-core', '2.1.0'
 gem 'mini_magick'
 gem 'meta-tags'
 gem 'bootsnap', '>= 1.1.0', require: false
