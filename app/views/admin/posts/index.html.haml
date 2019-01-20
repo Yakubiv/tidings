@@ -12,6 +12,7 @@
         %th Названия
         %th Статус
         %th Категорія
+        %th Публікація
         %th
 
     %tbody
@@ -20,13 +21,18 @@
           %td
             - if post.thumbnail.url
               = image_tag post.thumbnail_url(:thumb)
-          %td= post.title
+          %td= link_to post.title, edit_admin_post_path(post)
           %td
             - if post.publish_at && post.publish_at > Time.current
               %p Опублікується #{post.publish_at.strftime(Post::FULL_DATE)}
             - else
               = post.show(:status)
+            %br
+            = post.top ? 'Топова' : 'Звичайна'
+            %br
+            = post.popular ? 'Популярна' : ''
           %td= post.show(:category)
+          %td= l post.publish_at, format: Post::SHORT_DATE
           %td
             = link_to edit_admin_post_path(post) do
               %i.fa.fa-pencil
