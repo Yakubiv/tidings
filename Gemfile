@@ -26,6 +26,8 @@ gem 'sidekiq'
 gem 'redis-rails'
 gem 'impressionist'
 
+gem 'airbrake', '~> 8.3'
+
 # Editor
 gem 'jquery-rails'
 gem 'ckeditor', github: 'galetahub/ckeditor'
@@ -55,7 +57,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'rspec-rails'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
