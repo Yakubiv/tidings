@@ -26,11 +26,11 @@ gem 'sidekiq'
 gem 'redis-rails'
 gem 'impressionist'
 
-gem 'airbrake', '~> 8.3'
+gem 'airbrake', '9.3.0'
 
 # Editor
 gem 'jquery-rails'
-gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'ckeditor', '4.2.4'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'fog-core', '2.1.0'
