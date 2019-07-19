@@ -57,7 +57,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '4.1.1'
   gem 'rspec-rails'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
