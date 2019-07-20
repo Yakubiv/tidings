@@ -31,10 +31,10 @@ gem 'airbrake', '9.3.0'
 # Editor
 gem 'jquery-rails', '4.3.5'
 gem 'ckeditor', '4.2.4'
-gem 'carrierwave'
-gem 'fog-aws'
-gem 'fog-core', '2.1.0'
-gem 'mini_magick'
+gem 'carrierwave', '1.3.1'
+gem 'fog-aws', '3.5.2'
+gem 'fog-core', '2.1.2'
+gem 'mini_magick', '4.9.5'
 gem 'meta-tags'
 gem 'bootsnap', '>= 1.1.0', require: false
 
