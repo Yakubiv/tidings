@@ -2,8 +2,8 @@
 }
 
 .c-card-box {
-  width: 20%;
-  padding: 5px;
+  width: 25%;
+  padding: 10px 20px;
 
   @media screen and (max-width: $lg) {
     width: 50%
@@ -33,7 +33,7 @@
     top: 30px;
     color: $brand-white;
     line-height: 24px;
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
     background-color: $green;

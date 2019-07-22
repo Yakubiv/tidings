@@ -16,7 +16,7 @@ class HomeFacade
   end
 
   def recent_posts
-    @recent_posts ||= Post.includes(:tags).where(status: :published).recent
+    @recent_posts ||= Post.includes(:tags).where(status: :published)
   end
 
   def posts
