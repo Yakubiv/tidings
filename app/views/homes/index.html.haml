@@ -19,8 +19,9 @@
       .col-md-3
         = render 'layouts/top_news', posts: @home_facade.recent_posts
       .col-md-9
-        .c-cards
-          = render partial: 'posts/post', collection: @home_facade.posts, cached: true
+        .c-cards#posts
+          = render partial: 'posts/post', collection: @posts, cached: true
+        = raw pagy_nav(@pagy)
 
 = render 'layouts/popular', posts: @home_facade.popular_posts
 = render 'layouts/footer'

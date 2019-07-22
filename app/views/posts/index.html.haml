@@ -8,5 +8,7 @@
 - if @posts.any?
   .c-cards
     = render partial: 'posts/post', collection: @posts, cached: true
+
+  = raw pagy_nav(@pagy)
 - else
   = render 'layouts/blank_slate', records: 'Статтей'

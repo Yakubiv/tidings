@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
+  include Pagy::Backend
+
   def index
     @posts = Post.includes(:tags).send(filter_options)
     @posts = Post.includes(:tags).tagged_with(params[:tag]) unless params[:tag].blank?
+    @pagy, @posts = pagy(@posts, items: 10, anchor: '#posts')
   end
 
   def show

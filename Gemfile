@@ -28,6 +28,8 @@ gem 'impressionist', '1.6.1'
 
 gem 'airbrake', '9.3.0'
 
+gem 'pagy', '0.23.1'
+
 # Editor
 gem 'jquery-rails', '4.3.5'
 gem 'ckeditor', '4.2.4'
