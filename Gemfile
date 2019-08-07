@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '6.0.0.rc2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '4.0.1'
 gem 'sass-rails', '5.0.7'
@@ -16,7 +16,9 @@ gem 'google-webfonts', '0.3.2'
 gem 'haml-rails', '2.0.1'
 gem 'jquery-ui-rails', '6.0.1'
 gem 'rails-jquery-autocomplete', '1.0.5'
-gem 'acts-as-taggable-on', '6.0.0'
+
+gem 'acts-as-taggable-on', git: 'https://github.com/mbleigh/acts-as-taggable-on.git', branch: 'master'
+
 gem 'rack-cors', require: 'rack/cors'
 gem 'dalli', '2.7.10'
 gem 'redis-store', '1.6.0'
@@ -49,7 +51,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '3.7.0'
+  gem 'web-console', '4.0.0'
   gem 'listen', '3.1.5'
   gem 'spring', '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
@@ -59,7 +61,7 @@ end
 group :test do
   gem 'capybara', '3.26.0'
   gem 'selenium-webdriver', '3.142.3'
-  gem 'webdrivers', '4.1.1'
+  gem 'webdrivers', '4.1.2'
   gem 'rspec-rails', '3.8.2'
 end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
