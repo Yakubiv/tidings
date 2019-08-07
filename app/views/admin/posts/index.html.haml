@@ -13,6 +13,7 @@
         %th Статус
         %th Категорія
         %th Публікація
+        %th Створення
         %th
 
     %tbody
@@ -33,6 +34,7 @@
             = post.popular ? 'Популярна' : ''
           %td= post.show(:category)
           %td= l post.publish_at, format: Post::SHORT_DATE
+          %td= l post.created_at, format: Post::SHORT_DATE
           %td
             = link_to edit_admin_post_path(post) do
               %i.fa.fa-pencil

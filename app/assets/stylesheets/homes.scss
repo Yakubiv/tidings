@@ -82,6 +82,11 @@ body.home {
 }
 
 .c-content--narrow {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 3px 3px 10px 0px #d4d4d4;
+  border-radius: 5px;
+
   .c-content {
     &__media {
       position: relative;

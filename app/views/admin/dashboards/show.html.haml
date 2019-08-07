@@ -1,1 +1,24 @@
-Dashboard
+%h3.page-header Dashboard
+
+.row
+  .col-md-4
+    .card.card-content.--midnight-bg.text-white
+      .card-content--wrapper
+        .card-content--wrapper-left
+          Кількість постів на сайті
+        .card-content--wrapper-right
+          = Post.all.size
+  .col-md-4
+    .card.card-content.--green-bg.text-white
+      .card-content--wrapper
+        .card-content--wrapper-left
+          Кількість переглядів постів
+        .card-content--wrapper-right
+          = Post.all.sum(:impressions_count)
+  .col-md-4
+    .card.card-content.--blue-bg.text-white
+      .card-content--wrapper
+        .card-content--wrapper-left
+          Обратна связь
+        .card-content--wrapper-right
+          = Contact.all.count
