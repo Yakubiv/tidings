@@ -28,9 +28,9 @@ gem 'sidekiq', '5.2.7'
 gem 'redis-rails', '5.0.2'
 gem 'impressionist', '1.6.1'
 
-gem 'airbrake', '9.3.0'
+gem 'airbrake', '9.4.1'
 
-gem 'pagy', '0.23.1'
+gem 'pagy', '3.4.1'
 
 # Editor
 gem 'jquery-rails', '4.3.5'
@@ -47,7 +47,7 @@ gem 'devise', '4.6.2'
 
 group :development, :test do
   gem 'byebug'
-  gem 'dotenv-rails', '2.7.4'
+  gem 'dotenv-rails', '2.7.5'
 end
 
 group :development do
@@ -59,7 +59,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '3.26.0'
+  gem 'capybara', '3.28.0'
   gem 'selenium-webdriver', '3.142.3'
   gem 'webdrivers', '4.1.2'
   gem 'rspec-rails', '3.8.2'
