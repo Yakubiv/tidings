@@ -28,7 +28,7 @@ gem 'sidekiq', '5.2.7'
 gem 'redis-rails', '5.0.2'
 gem 'impressionist', '1.6.1'
 
-# gem 'airbrake', '~> 8.3'
+gem 'airbrake', '9.0.2'
 
 gem 'pagy', '3.4.1'
 
