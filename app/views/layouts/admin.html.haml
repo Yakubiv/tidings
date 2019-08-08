@@ -8,27 +8,34 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.admin
-    %nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse
-      %button.navbar-toggler.navbar-toggler-right.hidden-lg-up{"aria-controls" => "navbarsExampleDefault", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarsExampleDefault", "data-toggle" => "collapse", :type => "button"}
-        %span.navbar-toggler-icon
-      %a.navbar-brand{:href => "#"} Intonacia
-      #navbarsExampleDefault.collapse.navbar-collapse
-        %ul.navbar-nav.mr-auto
-        %form.form-inline.mt-2.mt-md-0
-          %input.form-control.mr-sm-2{:placeholder => "Search", :type => "text"}/
-          %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
-    .container-fluid
-      .row
-        .col-md-2.bg-faded.sidebar
-          %ul.nav.nav-pills.flex-column
-            %li.nav-item
-              %a.nav-link{ href: admin_dashboard_path, class: "#{'active' if controller_name == 'dashboards'}" }
-                Dashboard
-            %li.nav-item
-              %a.nav-link{ href: admin_posts_path, class: "#{'active' if controller_name == 'posts'}" } Статьи
-          %ul.nav.nav-pills.flex-column
-            %li.nav-item
-              %a.nav-link{ href: admin_contacts_path, class: "#{'active' if controller_name == 'contacts'}" } Обратная связь
-        .col-md-10
-          = yield
+  %body
+    .c-dashboard-main
+      .c-dashboard-main__header.bliss-bg
+        .c-dashboard-main__header--logo
+          %a.navbar-brand{ href: '' } Intonacia
+        .c-dashboard-main__header--content
+          .c-dashboard-main__header--content-left
+            Search
+          .c-dashboard-main__header--content-right
+            Right avatar
+      .c-dashboard-main-wrapper
+        .c-dashboard-main__sidebar.bg-royal
+          .scrollbar-container.ps
+            .c-dashboard-main__sidebar-inner
+              .c-menu-container
+                %ul.c-menu-container-list
+                  %li.c-menu-container-list-item
+                    %a.c-menu-container-list-link{ href: admin_dashboard_path, class: "#{'active' if controller_name == 'dashboards'}" }
+                      %i.fa.fa-slack
+                      Статистика
+                  %li.c-menu-container-list-item
+                    %a.c-menu-container-list-link{ href: admin_posts_path, class: "#{'active' if controller_name == 'posts'}" }
+                      %i.fa.fa-list-ul
+                      Статьи
+                  %li.c-menu-container-list-item
+                    %a.c-menu-container-list-link{ href: admin_contacts_path, class: "#{'active' if controller_name == 'contacts'}" }
+                      %i.fa.fa-comment
+                      Обратная связь
+        .c-dashboard-main__content
+          .c-dashboard-main__content-inner
+            = yield
