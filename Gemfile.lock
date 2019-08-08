@@ -68,7 +68,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     airbrake (9.0.2)
       airbrake-ruby (~> 4.2)
-    airbrake-ruby (4.6.0)
+    airbrake-ruby (4.4.0)
       rbtree3 (~> 0.5)
     babosa (1.0.2)
     bcrypt (3.1.13)
