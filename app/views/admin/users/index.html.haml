@@ -1,0 +1,26 @@
+%h2
+  Пользователи
+  .pull-right
+    = link_to 'New user', new_admin_user_path, class: 'btn btn-secondary u-m-b-10'
+
+
+.table-responsive
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Имя
+        %th Email
+        %th Роль
+        %th Дата
+        %th
+
+    %tbody
+      - @users.each do |user|
+        %tr{ style: "background: #{current_user == user && '#fc808d'}" }
+          %td= user.name
+          %td= user.email
+          %td= user.role
+          %td= user.created_at
+          %td
+            = link_to [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } do
+              %i.fa.fa-trash

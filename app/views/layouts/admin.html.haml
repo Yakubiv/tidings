@@ -36,6 +36,16 @@
                     %a.c-menu-container-list-link{ href: admin_contacts_path, class: "#{'active' if controller_name == 'contacts'}" }
                       %i.fa.fa-comment
                       Обратная связь
+                  - if current_user.admin?
+                    %li.c-menu-container-list-item
+                      %a.c-menu-container-list-link{ href: admin_users_url(subdomain: :admin), class: "#{'active' if controller_name == 'users'}" }
+                        %i.fa.fa-users
+                        Пользоватили
+                  %li.c-menu-container-list-item
+                    %a.c-menu-container-list-link{ href: edit_user_registration_url(subdomain: :admin), class: "#{'active' if controller_name == 'registrations'}" }
+                      %i.fa.fa-cog
+                      Настройки профиля
+
         .c-dashboard-main__content
           .c-dashboard-main__content-inner
             = yield
