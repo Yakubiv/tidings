@@ -24,7 +24,6 @@
     align-items: center;
     -ms-flex-line-pack: center;
     align-content: center;
-    position: relative;
     z-index: 10;
     -webkit-transition: all .2s;
     -o-transition: all .2s;
@@ -74,7 +73,7 @@
 
 .c-dashboard-main__sidebar {
   &-inner {
-    padding: 2px 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 }
 
@@ -221,7 +220,7 @@
 }
 
 .c-dashboard-main-wrapper {
-  padding-top: 20px;
+  padding-top: 60px;
   -ms-flex: 1 1;
   flex: 1 1;
   display: -ms-flexbox;

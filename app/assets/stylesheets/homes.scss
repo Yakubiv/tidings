@@ -26,7 +26,7 @@ body.home {
 }
 
 .c-content {
-  background: $brand-default;
+  background: $brand-white;
   padding-top: 2.4rem;
   padding-bottom: 2.4rem;
 
@@ -82,11 +82,6 @@ body.home {
 }
 
 .c-content--narrow {
-  padding: 30px;
-  background-color: white;
-  box-shadow: 3px 3px 10px 0px #d4d4d4;
-  border-radius: 5px;
-
   .c-content {
     &__media {
       position: relative;
@@ -106,7 +101,6 @@ body.home {
       img {
         width: 100%;
         display: block;
-        margin: 25px auto;
       }
 
       @media screen and (max-width: $lg) {
@@ -600,7 +594,7 @@ body.home {
 }
 
 .c-popular {
-  background-color: $brand-white;
+  background-color: $brand-default;
   font-size: 1.2rem;
   line-height: 1.8;
   width: 100%;

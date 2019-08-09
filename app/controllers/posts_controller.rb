@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   include Pagy::Backend
 
+  layout 'post', only: :show
+
   def index
     @posts = Post.includes(:tags).send(filter_options)
     @posts = Post.includes(:tags).tagged_with(params[:tag]) unless params[:tag].blank?
