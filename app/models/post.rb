@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   FULL_DATE = '%d %B, %Y %H:%M'.freeze
   SHORT_DATE = '%d %B, %H:%M'.freeze
+  DEFAULT_DATE = '%d %B %Y'.freeze
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
 

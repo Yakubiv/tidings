@@ -1,5 +1,5 @@
-body.admin {
-  margin-top: 80px;
+body {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 section {
@@ -12,14 +12,14 @@ a, a:hover {
 
 body.main {
   background: #19191b;
-  font-family: "metropolis-regular", sans-serif;
+  // font-family: "metropolis-regular", sans-serif;
 }
 
 body.home {
   background: #19191b;
-  font-family: "metropolis-regular", sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  // font-family: "metropolis-regular", sans-serif;
+  // font-style: normal;
+  // font-weight: normal;
   color: #656565;
   margin: 0;
   padding: 0;
@@ -83,14 +83,13 @@ body.home {
 
 .c-content--narrow {
   .c-content {
-    &__media {
-      position: relative;
-      padding: 0;
-
-      img {
-        vertical-align: bottom;
-      }
+    &__lead {
+      font-weight: bold;
+      font-size: 20px;
+      font-style: italic;
+      font-family: ind;
     }
+
     &__main {
       margin-top: 2rem;
       font-size: 18px;
@@ -156,7 +155,7 @@ body.home {
 
     &__header {
       padding: 0;
-      text-align: left;
+      text-align: center;
       border-bottom: 1px solid $border-grey;
 
       @media screen and (max-width: $md) {
@@ -164,15 +163,24 @@ body.home {
       }
 
       &-title {
-        font-size: 2.8rem;
-        line-height: 1.25;
+        font: 45px DomaineDisplayCyr-Regular,Georgia,serif;
+        line-height: 45px;
+        color: #000;
+        padding-bottom: 9px;
         font-weight: 300;
         margin-top: 0;
-        letter-spacing: .04rem;
 
         @media screen and (max-width: $md) {
           font-size: 1.8rem;
         }
+      }
+
+      &-date {
+        color: #888;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 14px;
       }
 
       &-meta {
@@ -195,6 +203,16 @@ body.home {
           display: inline-block;
           padding-left: 0;
           margin: 0 0.5rem;
+
+          &.impressions {
+            font-size: 14px;
+
+            i {
+              font-size: 12px;
+              position: relative;
+              top: -1px;
+            }
+          }
         }
       }
     }
@@ -470,7 +488,6 @@ body.home {
     list-style: none;
     margin: 0;
     padding: 0;
-    font-family: "metropolis-medium", sans-serif;
     font-size: 15px;
 
     li {
@@ -672,6 +689,11 @@ body.home {
     font-size: .9rem;
     line-height: 1.615;
     color: #333;
+
+    i {
+      font-size: 12px;
+      top: -1px;
+    }
   }
 
   h5 {
@@ -810,4 +832,9 @@ body.home {
 
 #disqus_thread {
   margin-top: 50px;
+}
+
+.fb-share-button {
+  position: relative;
+  top: -5px;
 }

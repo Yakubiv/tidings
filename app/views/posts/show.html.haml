@@ -7,25 +7,27 @@
 %article.c-content--narrow
   .format-article
     .c-content__header.col-full
+      .c-content__header-date
+        = l @post.created_at, format: Post::DEFAULT_DATE
       %h1.c-content__header-title
         = @post.title
       %ul.c-content__header-meta
-        %li.date= l @post.created_at, format: Post::FULL_DATE
-        |
         %li.category
           %a{ href: posts_path }
             = @post.show(:category)
         |
+        %li.impressions
+          %i.fa.fa-eye
+          = @post.impressions_count
+        |
         %li
-          %span
-            %i.fa.fa-eye{ style: 'font-size: 15px;' }
-            = @post.impressions_count
+          .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
 
-    .c-content__media.col-full
+    .c-content__lead
+      = @post.description
     .c-content__main
       = raw @post.content
       %hr
-      .fb-share-button{ data: { href:"http://www.intonacia.com/posts/#{@post.slug}", layout: "button_count" } }
 
     .c-content__actions
       = t('posts.read_more') if @post.back_post || @post.next_post
