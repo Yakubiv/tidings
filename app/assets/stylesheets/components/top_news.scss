@@ -44,7 +44,7 @@ ul.c-top-news__posts {
   &--title {
     font-size: 16px;
     float: right;
-    width: 80%;
+    width: calc(100% - 60px);
   }
 
   &--time {
