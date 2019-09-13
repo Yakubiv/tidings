@@ -29,6 +29,7 @@ gem 'redis-rails', '5.0.2'
 gem 'impressionist', '1.6.1'
 
 gem 'airbrake', '9.0.2'
+gem 'pg_search'
 
 gem 'pagy', '3.4.1'
 

@@ -21,7 +21,7 @@
       .col-md-9
         .c-cards#posts
           = render partial: 'posts/post', collection: @posts, cached: true
-        = raw pagy_nav(@pagy)
+        = render 'layouts/pagination', records: @posts, items_per_page: Post::ITEMS_PER_PAGE, pagy: @pagy
 
 = render 'layouts/popular', posts: @home_facade.popular_posts
 = render 'layouts/footer'

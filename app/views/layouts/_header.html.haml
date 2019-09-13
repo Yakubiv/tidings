@@ -12,7 +12,8 @@
           %a{ href: 'https://www.instagram.com/into.nacia/', target: '_blank', rel: 'nofollow' }
             %i.fa.fa-instagram
       .header__search
-        -# Search
+        = form_with url: search_index_path, method: :get, local: true, class: 'c-search--form' do |f|
+          = f.text_field :search, value: params[:search], placeholder: t('search.placeholder'), class: 'c-search--field'
     %nav.header__nav-wrap
       %ul.header__nav
         %li{ class: active_if?(controller: 'homes') }

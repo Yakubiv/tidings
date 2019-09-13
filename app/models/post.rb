@@ -4,8 +4,11 @@ class Post < ApplicationRecord
   DEFAULT_DATE = '%d %B %Y'.freeze
   DATE = '%d/%m'.freeze
   TIME = '%H:%M'.freeze
+  ITEMS_PER_PAGE = 15
 
   extend FriendlyId
+  include PgSearch::Model
+
   mount_uploader :thumbnail, ThumbnailUploader
   friendly_id :title, use: :slugged
 
@@ -26,6 +29,18 @@ class Post < ApplicationRecord
   scope :recent, -> { where(publish_at: 7.days.ago..Date.current) }
 
   default_scope { order(created_at: :desc) }
+
+  pg_search_scope(
+    :search,
+    against: %i[
+      description
+      title
+      content
+    ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  )
 
   def to_s
     title

@@ -1,4 +1,11 @@
 .c-cards {
+  left: -20px;
+  right: -20px;
+
+  @media screen and (max-width: $md) {
+    left: 0px;
+    right: 0px;
+  }
 }
 
 .c-card-box {

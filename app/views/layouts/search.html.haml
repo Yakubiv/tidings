@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    = render 'layouts/ga' if Rails.env.production?
+    = yield(:og_propeties)
+    = render 'layouts/head'
+  %body.main
+    = render 'layouts/fb_code'
+    %section.c-pageheader
+      = render 'layouts/header'
+    %section.c-content
+      .c-content--wrap
+        .row
+          .col-md-2
+          .col-md-8
+            = yield
+    = render 'layouts/popular', posts: Post.where(popular: true).first(6)
+    = render 'layouts/footer'

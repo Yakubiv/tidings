@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get 'c/:category', action: :index, on: :collection
   end
 
+  resources :search, only: :index
+
   resource :about, only: :show
   resources :contacts, only: %i[index create]
   resources :subscriptions, only: :create
