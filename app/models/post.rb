@@ -63,7 +63,7 @@ class Post < ApplicationRecord
 
   def to_meta_tags
     { title: title,
-      description: description,
+      description: meta_description,
       keywords: meta_tags.join(', ') }
   end
 
