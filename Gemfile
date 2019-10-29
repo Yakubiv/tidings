@@ -44,7 +44,7 @@ gem 'meta-tags'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # auth
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 
 group :development, :test do
   gem 'byebug'
