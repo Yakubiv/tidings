@@ -122,7 +122,7 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     erubis (2.7.0)
-    excon (0.66.0)
+    excon (0.71.0)
     execjs (2.7.0)
     ffi (1.11.1)
     fog-aws (3.5.2)
